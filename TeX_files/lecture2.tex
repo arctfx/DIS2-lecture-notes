@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{25A9}{\dash}
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.1}
+
+\newtheorem{proposition}{Твърдение}
+\newtheorem{definition}{Def.}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Th.}
+\newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\spc}{\text{ }}
+
+\everymath{\displaystyle}
+
+%Riemann integrals
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{
+	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+	\selectlanguage{russian}
+	\color{white}
+	\pagecolor{darkgray}
+	\title{Записки по ДИС2 - Лекция 2}
+	\maketitle
+	\begin{center}
+		\Large
+		\textbf{Класове интегруеми функции. }
+	\end{center}
+
+	\begin{theorem}
+		Нека $f: \left[a, b\right] \rightarrow \mathbb{R}$ и нека съществува  $\lim_{x\to\infty} \sigma_{f}\left(\tau;\spc\xi\right) = I$. Тогава f е ограничена, f е интегруема по Риман и $\int_{a}^{b} f = I$.
+		
+	\end{theorem}
+	\textbf{Доказателство:} Нека $f: \left[a, b\right] \rightarrow \mathbb{R}$ и $\epsilon > 0$ e достатъчно голямо. Нека $\epsilon = 3 > 0$ е фиксирано, oткъдето следва: \\
+	$\exists\delta>0\forall\tau, d(\tau)<\delta\forall\xi - представителни точки за \tau : |\sigma_{f}\left(\tau,\spc\xi\right)-I|<3$.\\
+	Нека $\tau : a=x_{0}<x_{1}<x_{2}<...<x_{n}=b$ е такова, че $d(\tau)<\delta$.
+	Тогава за всеки избор на $\xi_{i}\in\left[x_{i-1},\spc x_{i}\right],\spc i\in\{1,...,n\}$ е в сила\\
+	\[I-3 < \sum _{i=1}^{n}f(\xi_{i})(x_{i}-x_{i-1})<I+3\]
+	Достатъчно е да докажем, че $f$ е ограничена в $\left[x_{i-1},\spc x_{i}\right]$.\\
+	Фиксираме $\xi_{j}\in\left[x_{j-1},\spc x_{j}\right],\spc j\neq i$.\\
+	........
+	
+	\begin{theorem}
+		Ако $f: \left[a, b\right] \rightarrow \mathbb{R}$ е интегруема по Риман (следователно и $f$ е ограничена), то съществува $\lim_{x\to\infty} \sigma_{f}\left(\tau;\spc\xi\right) = \int_{a}^{b} f$.
+		
+	\end{theorem}
+
+\end{document}

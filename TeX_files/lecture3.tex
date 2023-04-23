@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{25A9}{\dash}
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.1}
+
+\newtheorem{proposition}{Твърдение}
+\newtheorem{corollary}{Следствие}
+\newtheorem{definition}{Def.}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Th.}
+\newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\spc}{\text{ }}
+
+\everymath{\displaystyle}
+
+%Riemann integrals
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{
+	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+	\selectlanguage{russian}
+	\color{white}
+	\pagecolor{darkgray}
+	\title{Записки по ДИС2 - Лекция 3}
+	\maketitle
+	\textbf{ }
+	
+	%LEMMA1
+	\begin{lemma}
+		Нека $f,g: \left[a,\spc b\right] \mapsto \mathbb{R}$ са интегруеми. Тогава $f\circ g$ е интегруема в интервала $\left[a,\spc b\right]$.
+	\end{lemma}
+	% BEGIN PROOF
+	\textbf{Доказателство:} Нека $\tau : a=x_{0}<x_{1}<x_{2}<...<x_{n}=b$ и $\epsilon>0$. Също така $x,\spc y\in\left[x_{i-1},\spc x_{i}\right]$. Разглеждаме разликата между сумите на Дарбу на композицията на $f$ и $g$:
+	\[S_{fg}(\tau)-s_{fg}(\tau)=\sum_{i=1}^{n}\omega (fg;\left[x_{i-1},\spc x_{i}\right])(x_{i} - x_{i-1})\].
+	........
+	$\blacksquare$
+	% END PROOF
+	
+	\begin{corollary}
+		\textbf{от Теоремата за средните стойности}: Нека $f: \left[a,\spc b\right] \mapsto \mathbb{R}$ е непрекъсната и $g: \left[a,\spc b\right] \mapsto \mathbb{R}$ е интегруема, като $g$ е неотрицателна в интервала $\left[a,\spc b\right]$. Тогава съществува $\xi\in\left[a,\spc b\right]$, за което $\int_{a}^{b} f(x)\,\mathrm{d}x = f(\xi)\int_{a}^{b} g(x)\,\mathrm{d}x$.
+	\end{corollary}
+	% BEGIN PROOF
+	\textbf{Доказателство:} \textbf{(Iсл.)} Нека ...\\
+	\textbf{(Iсл.)}........
+	$\blacksquare$
+	% END PROOF
+	
+	
+\end{document}
