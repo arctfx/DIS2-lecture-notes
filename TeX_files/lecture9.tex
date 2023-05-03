@@ -3,7 +3,7 @@
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel}
-
+\usepackage{wrapfig}
 \usepackage{amsmath}
 \usepackage[customcolors]{hf-tikz}
 \usepackage{tikz}
@@ -132,19 +132,47 @@
 		hatch line width=.5pt,
 	}
 
-	\begin{tikzpicture}
-		\begin{scope}[dash pattern=on 5pt off 5pt on 5pt off 5pt,thick,font=\scriptsize]
-			\draw [draw] (+1,-1) circle (2.5);
-		\end{scope}
+		\begin{tikzpicture}
+			\begin{scope}[dash pattern=on 5pt off 5pt on 5pt off 5pt,thick,font=\scriptsize]
+				\draw [draw] (+1,-1) circle (2.5);
+			\end{scope}
 			\path [draw=none, pattern=hatch, pattern color=gray] (+1,-1) circle (2.45);
-		%\draw[<->] (0,-2)--(0,2) node[above]{$y$}
-		\draw [line width=0.5mm,-stealth](1,-1) -- (2.7,0.7);
-		\node [below right,white] at (+1.8,-0.2) {$a$};
-	\end{tikzpicture}
+			\draw [line width=0.5mm,-stealth](1,-1) -- (2.7,0.7);
+			\node [below right,white] at (+1.8,-0.2) {$a$};
+			\node [below right,white] at (-1.8,1.8) {$\mathbb{C}$};
+		\end{tikzpicture}
+	В комплексната равнина в областта на сходимост са точките във вътрешността на окръжност с радиус \textit{а}. Във всички точки извън окръжността степенният ред е разходящ. В граничните точки не се знае дали е сходящ или разходящ.
+	\begin{lemma}
+		Нека $\sum_{n=0}^{\infty}a_n(\xi - a)^n$ е сходящ. Тогава $\sum_{n=0}^{\infty}a_n(x - a)^n$ е абсолютно сходящ за всяко $x \in \mathbb{R}$, за което $|x-a|<|\xi - a|$. 
+	\end{lemma}
+	%BEGIN PROOF
+	\textbf{\underline{Доказателство:}} $|x-a|<|\xi - a|$
+	\begin{flalign}
+		&\sum_{n=0}^{\infty}|a_n(x-a)^n|=\sum_{n=0}^{\infty}\underbrace{\left|a_n(\xi-a)^n\right|}_{\leq M}\left|\frac{x-a}{\xi-a}\right|^n&&
+	\end{flalign}
+	$\sum_{n=0}^{\infty}a_n(\xi - a)^n$ - сходящ $\Rightarrow a_n(\xi-a)^n\underset{n\to\infty}{\longrightarrow}0\Rightarrow\exists M\in\mathbb{R} \spc\forall n\in\mathbb{N}\cup\{0\}:|a_n(\xi -a)^n|\leq M$\\
+	$(1)\spc\leq\sum_{n=0}^{\infty}M.q^n,\quad q=\left|\frac{x-a}{\xi-a}\right|\in[0,1)\Rightarrow$ редът е сходящ от пр. за сравнение. $\square$
+	%END PROOF
 	
-	\begin{tikzpicture}		
-		\foreach \r in {1,...,4}
-		\draw [pattern=hatch, pattern color=white, hatch size=10pt]
-		(\r*3,6) rectangle ++(2,2);
-	\end{tikzpicture}
+	\begin{theorem}
+		Всеки степенен ред има радиус на сходимост. При това $\sum_{n=0}^{\infty}a_n(x-a)^n$ е абсолютно сходящ.
+	\end{theorem}
+	%BEGIN PROOF	\textbf{\underline{Доказателство:}} $\sum_{n=0^{\infty}a_n(x-a)^n$\\
+	$R := sup\Biggl\{\underbrace{|x-a|:\sum_{n=0}^{\infty}a_n(x-a)^n\text{е сходящ}}_{\neq \emptyset}\Biggr\}\quad R\in[0,+\infty]$\\
+	$x\in\mathbb{R}, |x-a|>R \Rightarrow \sum_{n=0}^{\infty}a_n(x-a)^n$ - разходящ.\\
+	$x\in\mathbb{R}, |x-a|<R \Rightarrow \exists\xi\in\mathbb{R}: |x-a|<|\xi-a|\text{ и }\sum_{n=0}^{\infty}a_n(x-a)^n$ - е сходящ.\\
+	Като приложим лемата, получаваме, че: $\sum_{n=0}^{\infty}a_n(x-a)^n$ е абсолютно сходящ. $\square$
+	%END PROOF
+	
+	\begin{theorem}
+		\textbf{Формула на Коши-Адамар}\\
+		Радиусът на сходимост на $\sum_{n=0}^{\infty}a_n(x-a)^n$ е $R = \frac{1}{\limsup\sqrt[n]{\mathbf{|}a_n\mathbf{|}}}$
+	\end{theorem}
+	(със съглашението $\textstyle\frac{1}{0}=+\infty,\spc\frac{1}{+\infty}=0$)\\
+	Припомняме дефиницията на $\limsup$: $\{b_n\}_{n=1}^{\infty}\rightarrow l = \limsup b_n,$ ако $l$ е точка на сгъстяване на $\{b_n\}_{n=1}^{\infty}$ и $\forall \varepsilon > 0 \spc\exists n_0 \in \mathbb{N} \spc\forall n \geq n_0 : b_n < l + \varepsilon$\\
+	
+	%BEGIN PROOF
+	\textbf{\underline{Доказателство:}} $l = \limsup\sqrt[n]{|a_n|}$, $R = \frac{1}{l}$\\
+	(a) $|x-a|<\frac{1}{l}$ $\quad l|x-a|<1\rightarrow \exists q : l|x-a|<q<1$
+	%END PROOF
 \end{document}

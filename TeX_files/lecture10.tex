@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{25A9}{\dash}
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.1}
+
+%TikZ hf-tikz
+\hfsetfillcolor{teal!50!black}
+\hfsetbordercolor{teal!80}
+
+%halfbox
+\newtcbox{\rbbox}[1][]{on line, sharp corners, colframe=white,coltext=white, colback=darkgray, size=small, toprule=0pt, leftrule=0pt, #1}
+\newcommand{\halfbox}[1]{\rbbox{#1}\quad}
+
+
+\everymath{\displaystyle}
+
+%Riemann integrals
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{
+	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+%NEWTHEOREMS
+\newtheorem{proposition}{Твърдение}
+\newtheorem{definition}{Def.}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Th.}
+\newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\spc}{\text{ }}
+
+%BEGIN DOCUMENT
+\begin{document}
+	\selectlanguage{russian}
+	\color{white}
+	\pagecolor{darkgray}
+	\title{Записки по ДИС2 - Лекция 10}
+	\date{27.04.2023}
+	\maketitle
+	\begin{center}
+		\Large
+		\textbf{Функции на няколко променливи.}
+	\end{center}
+	
+	%###########################################################
+	\begin{align*}\mathbb{R}^{n} = &\{x=(x_1,x_2,...,x_n):x_i\in\mathbb{R} \spc\forall i\in\{1,...,n\}\}\\
+	&x\in\mathbb{R}\\
+	\spc\\
+	&x=(x_1,x_2,...,x_n)\\
+	&y=(y_1,y_2,...,y_n)\\
+	&x+y=(x_1+y_1,x_2+y_2,...,x_n+y_n)\\
+	&x\in\mathbb{R}\\
+	&\lambda x =(\lambda x_1, \lambda x_2, ..., \lambda x_n)\\
+	\end{align*}
+	
+\end{document}
