@@ -9,10 +9,17 @@
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{mathtools}
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{25A9}{\dash}
 \usepackage{color}
 \definecolor{darkgray}{gray}{0.1}
+\definecolor{orange}{RGB}{250, 125, 0}
+
+%Empty set redefined symbol
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
 
 \newtheorem{proposition}{Твърдение}
 \newtheorem{definition}{Def.}
@@ -21,15 +28,9 @@
 \newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
 \newcommand{\spc}{\text{ }}
 
-%\newcommand{\lb}{\left(}
-%\newcommand{\rb}{\right)}
-%\newcommand{\lsb}{\left[}
-%\newcommand{\rsb}{\right]}
-%\newcommand{\lcb}{\left\{}
-%\newcommand{\rcb}{\right\}}
-
 \everymath{\displaystyle}
-
+%Halfbox
+\newcommand{\halfbox}[1]{\underline{\textbf{#1}:}\textbf{\large{| }}}
 %Riemann integrals
 \def\upint{\mathchoice%
 	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
@@ -44,7 +45,8 @@
 	\selectlanguage{russian}
 	\color{white}
 	\pagecolor{darkgray}
-	\title{Записки по ДИС2 - Лекция 1}
+	\title{Записки по ДИС2 КН2 - Лекция 1}
+	\date{23.02.2023}
 	\maketitle
 	\begin{center}
 		\Large
@@ -145,8 +147,18 @@
 		$s_{f}\left(\tau_{1}\right) \leq s_{f}\left(\tau^{*}\right)$; \\
 		$S_{f}\left(\tau^{*}\right) \leq S_{f}\left(\tau_{2}\right)$.
 	\end{center}
-	Нека $f: \left[a, b\right] \mapsto \mathbb{R}$ е ограничена.
-	......
+	\[[s_f(\tau_1),S_f(\tau_1)]\cap[s_f(\tau_2),S_f(\tau_2)]\neq\emptyset\quad \forall\tau_1,\tau_2 - \text{ подразбивания}\]
+	Нека $f: \left[a, b\right] \mapsto \mathbb{R}$ е ограничена.\\
+	$\upint_a^b f(x)\,\mathrm{d}x := \inf\{S_f(\tau):\tau\quad \text{подразбиване на }[a,b]\}\quad \leftarrow$добре дефинирано\\
+	$\spc \nwarrow$\textit{ Горен интеграл}\\
+	$\lowint_a^b f(x)\,\mathrm{d}x := \sup\{s_f(\tau):\tau\quad\text{подразбиване на }[a,b]\}\quad \leftarrow$добре дефинирано\\
+	$\spc \nwarrow$\textit{ Долен интеграл}\\
+	%\color{red}(...)\color{white}
+	\halfbox{Lemma}
+		$s_f(\tau_1)\leq S_f(\tau_2)\quad \forall\tau_1,\tau_2\text{ - подразбивания на }[a,b]$\\
+		$\Rightarrow \lowint_a^b f(x)\,\mathrm{d}x \leq S_f(\tau_2)\quad \forall\tau_2\text{ - подразбиванe на }[a,b]$\\
+		$\Rightarrow \lowint_a^b f(x)\,\mathrm{d}x \leq \upint_a^b f(x)\,\mathrm{d}x$
+		\hfill $\blacksquare$\\
 	% END PROOF
 	
 	\begin{definition}
@@ -156,14 +168,25 @@
 	\end{definition}
 
 	% TO-DO Add example
-	
+	\halfbox{Пример} Функция на Дирихле
+	\begin{equation*}
+		f(x) = 	\begin{cases}
+					0,\quad\text{ако }x\in \mathbb{J}\cap[0,1]\\
+					1,\quad\text{ако }x\in \mathbb{Q}\cap[0,1]
+				\end{cases}\\
+	\end{equation*}
+	\[f:[0,1]\rightarrow \mathbb{R}\quad\quad
+	s_f(\tau)=\sum_{i=1}^{n}0.(x_i - x_{i-1})=0\quad\quad
+	S_f(\tau)=\sum_{i=1}^{n}1.(x_i - x_{i-1})=1\]
+	\\
 	
 	\begin{theorem}
 		\textbf{(Критерий за интегруемост по Риман)} 	Нека $f:\left[a, b\right] \rightarrow \mathbb{R}$ е ограничена.
 		Твърдим, че f е интегруема по Риман тогава и само тогава, когато за всяко епсилон по-голямо от нула съществуват подразбивания $\tau_{1} и \tau_{2}$ на $\left[a, b\right]$, за които $S_{f}\left(\tau_{1}\right) - s_{f}\left(\tau_{2}\right) < \varepsilon$. Еквивалентно, за всяко епсилон по-голямо от нула съществува подразбиване на $\left[a, b\right]$, за което $S_{f}\left(\tau\right) - s_{f}\left(\tau\right) < \varepsilon$.
 	\end{theorem}
 	% BEGIN PROOF
-	\textbf{Доказателство}: ($\Rightarrow$) Нека $\varepsilon>0$ е произволно. Имаме:
+	\textbf{Доказателство}: \\
+	($\Rightarrow$) Нека $\varepsilon>0$ е произволно. Имаме:
 	\[
 	\int_{a}^{b} f + \frac{\varepsilon}{2}\spc = \upint_a^b f + \frac{\varepsilon}{2}\spc
 	> \upint_a^b f \Rightarrow 
@@ -183,8 +206,35 @@
 	$\Rightarrow \forall\tau_{1},\tau_{2} : S_f(\tau_{1})-s_f(\tau_{2}) \geq \upint_{a}^{b}f - \lowint_{a}^{b}f > 0 $ - противоречие.\\
 	($\Uparrow$) Достатъчно е да положим $\tau_{1} := \tau$ и $\tau_{1} := \tau$\\
 	($\Downarrow$) Нека $\varepsilon>0$. Имаме разбиванията $\tau_{1}, \tau_{2}$, за които $S_f(\tau_{1}) - s_f(\tau_{2}) < \varepsilon$. Нека $\tau$ е разбиване по-фино от $\tau_{1}$ и $\tau_{2}$, т.е. $\tau\geq\tau_1, \tau\geq\tau_2$\\
-	$\Rightarrow S_f(\tau) - s_f(\tau) \leq S_f(\tau_1) - s_f(\tau_2) < \varepsilon$\\
-	$\blacksquare$
+	$\Rightarrow S_f(\tau) - s_f(\tau) \leq S_f(\tau_1) - s_f(\tau_2) < \varepsilon$
+	%TO-DO: add graphs
+	
+	$\spc$\\
+	$f:[a,b]\rightarrow\mathbb{R}$ - ограничена
+	\hfill $\tau:a=x_0<x_1<...<x_n=b$\\
+	$\omega(f;[a,b])=\sup\{|f(x)-f(y)|:x,y\in[a,b]\}$ - осцилация
+	\\ $S_f(\tau)-s_f(\tau)=\sum_{i=1}^{n}\underbrace{[\underset{[x_{i-1},x_i]}{\sup f} - \underset{[x_{i-1},x_i]}{\inf f}]}_{\text{осцилация на }f}(x_i-x_{i-1})$\\
+	
+	\halfbox{Lemma} $\omega(f;[a,b])=\underset{[a,b]}{\sup f} - \underset{[a,b]}{\inf f}$\\
+	Доказателство: $x,y\in[a,b]\rightarrow f(x)\leq \underset{[a,b]}{\sup f},\quad f(y)\geq \underset{[a,b]}{\inf f}$\\
+	\begin{equation*}
+		|f(x)-f(y)|\longrightarrow
+		\begin{cases}
+			f(x)-f(y)\leq\underset{[a,b]}{\sup f}-\underset{[a,b]}{\inf f}\\
+			f(y)-f(x)\leq\underset{[a,b]}{\sup f}-\underset{[a,b]}{\inf f}
+		\end{cases}
+		\Rightarrow\omega(f;[a,b])\leq \underset{[a,b]}{\sup f}-\underset{[a,b]}{\inf f}
+	\end{equation*}
+	
+	$\spc$\\
+	$\varepsilon>0\quad \underset{[a,b]}{\sup f}-\underset{[a,b]}{\inf f} - \varepsilon$\\
+	$x_0\in[a,b],\spc f(x_0)>\underset{[a,b]}{\sup f}-\frac{\varepsilon}{2}$\\
+	$y_0\in[a,b],\spc f(y_0)<\underset{[a,b]}{\inf f}+\frac{\varepsilon}{2}$\\
+	$\Rightarrow f(x_0)-f(y_0)>\underset{[a,b]}{\sup f}-\underset{[a,b]}{\inf f}-\varepsilon$\\
+	$\spc$
+	\\
+	$\Leftrightarrow \forall\varepsilon>0 \spc\exists\tau\text{ - подразбиване на }[a,b]:\sum_{i=1}^{n}\omega(f;[a,b])(x_i-x-{i-1})<\varepsilon$
+	\hfill $\blacksquare$\\
 	% END PROOF
 	
 	\begin{definition}
@@ -196,8 +246,6 @@
 		Осцилацията на функцията f в даден интервал е равна на разликата между супремума и инфимума на функцията в дадения интервал.
 		\[\omega(f;\spc[a,b]) = \underset{\left[a, b\right]}{sup} f - \underset{\left[a, b\right]}{inf} f\]
 	\end{lemma}
-	%PROOF BEGIN
-	%PROOF END
 %
 %+
 %
@@ -206,6 +254,7 @@
 		Непрекъснатите функции са интегруеми.
 	\end{proposition}
 	% BEGIN PROOF
+	% TO-DO rewrite proof
 	\textbf{Доказателство}: Нека $f:[a,b] \rightarrow \mathbb{R}$ - непрекъсната. Oт Теорема на Вайерщрас следва, че $f$ е ограничена.\\
 	Tеорема на Кантор $ \Rightarrow \exists \delta>0\spc\forall {x}^{\prime}, {x}^{\prime\prime} \in [a,b],\spc |{x}^{\prime} - {x}^{\prime\prime}|<\delta : |f({x}^{\prime}) - f({x}^{\prime\prime})| < \varepsilon $ 
 	Взимаме $\tau : a=x_{0}<x_{1}<x_{2}<...<x_{n}=b$, за което\\ $d(\tau):=\max{\{x_i - x_{i-1} : i\in\{1,...,n\}\}} < \delta$,\\
@@ -220,13 +269,42 @@
 %
 
 	\begin{proposition}
-		Нека f е ограничена и има краен брой точки на прекъсване. Тогава f е интегруема.
+		Нека $f:[a,b]\rightarrow\mathbb{R}$ е ограничена и има краен брой точки на прекъсване. Тогава $f$ е интегруема.
 	\end{proposition}
-
+	%BEGIN PROOF%
+	%TO-DO add graph
+	Нека $y_1,y_2,...,y_k$ са точките на прекъсване на $f$.
+	\boxed{\eta>0}\\
+	$C=[a,b]\backslash \Big(\underset{i=1}{\overset{k}{\bigcup}}(y_i-\eta,y_i+\eta)\Big)\quad\leftarrow$ обединение на краен брой интервали и $f$ е непрекъснато върху C\\
+	Кантор $\Rightarrow\quad \exists\delta>0\spc \forall x',x''\in C, |x'-x''|<\delta:|f(x')-f(x'')|<\frac{\varepsilon}{4(b-a)}$\\
+	$\tau:a=x_0<x_1<...<x_n=b$ такава, че $[x_{i-1},x_i]\subset C\rightarrow x_i - x_{i-1}<\delta\\ \color{orange}[a,b]\cap\color{white}[x_{i-1},x_i]=[y_j-\eta,y_j+\eta]\geq 0$ за някое $j\in\{1,...,k\}$\\
+	$M=\underset{[a,b]}{\sup f},\quad m=\underset{[a,b]}{\inf f}$\\
+	$S_f(\tau)-s_f(\tau)=\sum_{i=1}^{n}\omega(f;[x_{i-1},x_i])(x_i-x_{i-1})=\sum_{[x_{i-1},x_i]\subset C}\omega(f;[x_{i-1},x_i])(x_i-x_{i-1})+\sum_{j=1}^{k}\omega\underbrace{(f;[y_j-\eta,y_j+\eta])}_{\leq M-m}(\cap[a,b]).2\eta\leq\frac{\eta}{4(b-a)}\underset{\underbrace{[x_{i-1},x_i]\subset C}_{\leq(b-a)} }{\sum(x_i-x_{i-1})}+(M-m).2\eta.k$\\
+	$S_f(\tau)-s_f(\tau)\leq\frac{\epsilon}{4\cancel{(b-a)}}\cancel{(b-a)}+(M-m)2k.\eta<\varepsilon$\\
+	$0<\eta<\frac{\varepsilon}{4k(M-m)}$
+	\hfill$\blacksquare$	
+	%END PROOF%
+	
 	\begin{proposition}
 		Монотонните функции са интегруеми.
 	\end{proposition}
-
+	%BEGIN PROOF
+	%TO-DO add graph
+	Нека $f:[a,b]\rightarrow\mathbb{R}\spc\text{(б.о.о.) растяща}$\hfill$f(a)\leq f(x)\leq f(b)\spc \forall x\in[a,b]\Rightarrow f$ - ограничена\\
+	$\tau:a=x_0<x_1<...<x_n=b$\hfill$ x\in[x_{i-1},x_i]\Rightarrow f(x_{i-1})\leq f(x)\leq f(x_i)$
+	$\underset{[x_{i-1},x_i]}{\inf f}=f(x_{i-1}),\quad \underset{[x_{i-1},x_i]}{\sup f}=f(x_{i})$\\
+	$S-f(\tau)-s_f(\tau)=\sum_{i=1}^{n}(f(x_i)-f(x_{i-1})\underbrace{(x_i-x_{i-1})}_{d(\tau)}\\
+	\leq d(\tau).\underbrace{\sum_{i=1}^{n}(f(x_i)-f(x_{i-1}))}=d(\tau).(f(b)-f(a))$\\
+	\boxed{\varepsilon>0}$\rightarrow$Избираме $\tau$ с $d(\tau)<\frac{\varepsilon}{f(b)-f(a)+1}<\frac{\varepsilon}{f(b)-f(a)+1}(f(b)-f(a))<\varepsilon$
+	\hfill$\blacksquare$\\
+	%END PROOF
+	
+	
+	
+	
+	
+	
+	
 	\begin{proposition}
 		Нека $f:\left[a, b\right] \rightarrow \mathbb{R}$ е ограничена и имаме произволно разбиване на интервала, в който е дефинирана.
 		%\textbackslash{}left[a,\textbackslash{}spc b\textbackslash{}right]
@@ -244,12 +322,5 @@
 		Нека $\tau : a=x_{0}<x_{1}<x_{2}<...<x_{n}=b$ е подразбиване на $\left[a, b\right]$. Нека $\tau^{*}\geq\tau$, $\tau^{*}$ се получава от $\tau$ чрез прибавянето на k точки. Тогава $0\leq S_{f}\left(f\right)-S_{f}\left(\tau^{*}\right)\leq...$.
 		Нека $m := \underset{\left[a, b\right]}{inf} f$ и $М := \underset{\left[a, b\right]}{sup} f$
 	\end{lemma}
-	
-	
-	\begin{center}
-		\textbf{Основни свойства на интеграла}
-	\end{center}
-	(I) Линейност
-	
 	%▩
 \end{document}

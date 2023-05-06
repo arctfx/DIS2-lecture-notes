@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.24)  6 MAY 2023 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.24)  5 MAY 2023 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./lecture9.tex
-(lecture9.tex
+**./lecture11.tex
+(lecture11.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-09-28> (D:\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -894,13 +894,13 @@ File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \c@lemma=\count316
 \c@theorem=\count317
 
-(lecture9.aux
-LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 7
+(lecture11.aux
+LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 6
 .
  (D:\MiKTeX\tex/latex/cyrillic\t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
-\openout1 = `lecture9.aux'.
+\openout1 = `lecture11.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
@@ -988,57 +988,58 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \author given.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--73
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 90.
+
+
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 90.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--89
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--93
+Underfull \hbox (badness 10000) in paragraph at lines 97--105
 
  []
 
-Missing character: There is no ; in font nullfont!
 [1
 
-{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 110--118
 
  []
 
-[3] (lecture9.aux) ) 
+[2] (lecture11.aux) ) 
 Here is how much of TeX's memory you used:
- 29818 strings out of 475385
- 732576 string characters out of 2793319
- 1231897 words of memory out of 3000000
- 50681 multiletter control sequences out of 15000+600000
- 488987 words of font info for 74 fonts, out of 8000000 for 9000
+ 29740 strings out of 475385
+ 731013 string characters out of 2793319
+ 1230898 words of memory out of 3000000
+ 50608 multiletter control sequences out of 15000+600000
+ 486351 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,15n,118p,733b,709s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/l
-h-t2a/dpi600\labi1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour
-/lh/lh-t2a/dpi600\lati1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/l
-jfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts
-/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\
-fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Lenovo\AppData\Local\Mi
-KTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Lenovo\AppData\Loc
-al\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Lenovo\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk><D:/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cme
-x10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi6.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
-i8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmr6.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.p
-fb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/symbols/msa
-m10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lecture9.pdf (3 pages, 189106 bytes).
+ 115i,15n,118p,734b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
+lh-t2a/dpi600\lati1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfou
+r/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/
+ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\font
+s/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX
+\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Lenovo\AppData\Local\M
+iKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk><D:/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmex10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Mi
+KTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on lecture11.pdf (2 pages, 146087 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
+ 223 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
