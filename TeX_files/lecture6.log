@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.24)  28 MAY 2023 21:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.24)  12 MAY 2023 23:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./lecture1.tex
-(lecture1.tex
+**./lecture6.tex
+(lecture6.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-09-28> (D:\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -442,80 +442,49 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (D:\MiKTeX\tex/latex/cancel\cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
-(D:\MiKTeX\tex/latex/mathtools\mathtools.sty
-Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
-
-(D:\MiKTeX\tex/latex/tools\calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count276
-\calc@Bcount=\count277
-\calc@Adimen=\dimen161
-\calc@Bdimen=\dimen162
-\calc@Askip=\skip52
-\calc@Bskip=\skip53
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count278
-\calc@Cskip=\skip54
-) (D:\MiKTeX\tex/latex/mathtools\mhsetup.sty
-Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
-)
-\g_MT_multlinerow_int=\count279
-\l_MT_multwidth_dim=\dimen163
-\origjot=\skip55
-\l_MT_shortvdotswithinadjustabove_dim=\dimen164
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen165
-\l_MT_above_intertext_sep=\dimen166
-\l_MT_below_intertext_sep=\dimen167
-\l_MT_above_shortintertext_sep=\dimen168
-\l_MT_below_shortintertext_sep=\dimen169
-\xmathstrut@box=\box53
-\xmathstrut@dim=\dimen170
-)
    defining Unicode char U+25A9 (decimal 9641)
  (D:\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
-
 (D:\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
 
 (D:\MiKTeX\tex/latex/graphics\mathcolor.ltx))
-\c@proposition=\count280
-\c@definition=\count281
-\c@lemma=\count282
-\c@theorem=\count283
+\c@proposition=\count276
+\c@definition=\count277
+\c@lemma=\count278
+\c@theorem=\count279
 
 (D:\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count284
-\l__pdf_internal_box=\box54
-) (lecture1.aux
+\l__color_backend_stack_int=\count280
+\l__pdf_internal_box=\box53
+) (lecture6.aux
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 6
 .
 
 (D:\MiKTeX\tex/latex/cyrillic\t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
-\openout1 = `lecture1.aux'.
+\openout1 = `lecture6.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -551,27 +520,27 @@ LaTeX Font Info:    ... okay on input line 44.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \th on input line 44.
+LaTeX Info: Redefining \th on input line 46.
 (D:\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count285
-\scratchdimen=\dimen171
-\scratchbox=\box55
-\nofMPsegments=\count286
-\nofMParguments=\count287
+\scratchcounter=\count281
+\scratchdimen=\dimen161
+\scratchbox=\box54
+\nofMPsegments=\count282
+\nofMParguments=\count283
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count288
-\MPscratchDim=\dimen172
-\MPnumerator=\count289
-\makeMPintoPDFobject=\count290
+\MPscratchCnt=\count284
+\MPscratchDim=\dimen162
+\MPnumerator=\count285
+\makeMPintoPDFobject=\count286
 \everyMPtoPDFconversion=\toks26
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
 
  (D:\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 
  (D:\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -580,120 +549,41 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \author given.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--70
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--76
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--90
-
- []
-
-
-Overfull \hbox (208.04655pt too wide) in paragraph at lines 97--101
-[]\T2A/cmr/m/it/12 Нека $\OML/cmm/m/it/12 ^^\[]$\T2A/cmr/m/it/12 , $\OML/cmm/m/
-it/12 ^^\$ \T2A/cmr/m/it/12 са под-раз-би-ва-ния на ин-тер-ва-ла $[]$, та-ки-ва
- че $\OML/cmm/m/it/12 ^^\[] \OMS/cmsy/m/n/12 ^^U \OML/cmm/m/it/12 ^^\$\T2A/cmr/
-m/it/12 . $[]$.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--108
-
+Overfull \hbox (18.20181pt too wide) in paragraph at lines 106--108
+[]$[]$\T2A/cmr/bx/n/14.4 |  \T2A/cmr/m/n/12 ДСД схо-ди-мост по Че-разо (до-маш-
+но за вкъ-щи) [] Ако $\OMS/cmsy/m/n/12 9 [] [] \OT1/cmr/m/n/12 =
  []
 
 [1
 
-{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-
-LaTeX Warning: Command \cyri invalid in math mode on input line 140.
-
-Missing character: There is no и in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--163
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
-
- []
-
-
-LaTeX Warning: Command \cyri invalid in math mode on input line 185.
-
-Missing character: There is no и in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 212--217
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--220
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--239
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 293--301
-
- []
-
-[5] (lecture1.aux) ) 
+{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+(lecture6.aux) ) 
 Here is how much of TeX's memory you used:
- 6504 strings out of 475385
- 102959 string characters out of 2793319
- 470368 words of memory out of 3000000
- 27761 multiletter control sequences out of 15000+600000
- 489835 words of font info for 73 fonts, out of 8000000 for 9000
+ 5853 strings out of 475385
+ 91078 string characters out of 2793319
+ 443680 words of memory out of 3000000
+ 27127 multiletter control sequences out of 15000+600000
+ 484705 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,62p,635b,216s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/l
-h-t2a/dpi600\larm0800.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour
-/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/l
-jfour/lh/lh-t2a/dpi600\labi1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts
-/pk/ljfour/lh/lh-t2a/dpi600\lati1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\
-fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Lenovo\AppData\Local\Mi
-KTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Lenovo\AppData\Loc
-al\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Lenovo\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Lenovo\A
-ppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk><D:/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/latxfon
-t/line10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/MiKT
-eX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lecture1.pdf (5 pages, 236153 bytes).
+ 55i,6n,62p,256b,214s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2
+a/dpi600\lati1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
+lh-t2a/dpi600\labx1440.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfou
+r/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/
+ljfour/lh/lh-t2a/dpi600\labi1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\font
+s/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX
+\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Lenovo\AppData\Local\M
+iKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Lenovo\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk><D:/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmex10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pf
+b><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+
+Output written on lecture6.pdf (2 pages, 137938 bytes).
 PDF statistics:
- 345 PDF objects out of 1000 (max. 8388607)
+ 240 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.24)  6 MAY 2023 17:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.24)  12 MAY 2023 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -549,44 +549,55 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \author given.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--62
+Underfull \hbox (badness 10000) in paragraph at lines 61--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--68
+Underfull \hbox (badness 10000) in paragraph at lines 64--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 [1
 
-{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
 (lecture7.aux) ) 
 Here is how much of TeX's memory you used:
- 5856 strings out of 475385
- 91108 string characters out of 2793319
- 440680 words of memory out of 3000000
- 27129 multiletter control sequences out of 15000+600000
- 485635 words of font info for 68 fonts, out of 8000000 for 9000
+ 5858 strings out of 475385
+ 91133 string characters out of 2793319
+ 445680 words of memory out of 3000000
+ 27130 multiletter control sequences out of 15000+600000
+ 486453 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,13n,62p,227b,214s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2
-a/dpi600\larm1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
-lh-t2a/dpi600\lati1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfou
-r/lh/lh-t2a/dpi600\labi1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/
-ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\font
-s/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX
-\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Lenovo\AppData\Local\M
-iKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk><D:/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmex10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pf
-b><D:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lecture7.pdf (1 page, 110661 bytes).
+a/dpi600\labx1440.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
+lh-t2a/dpi600\larm1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfou
+r/lh/lh-t2a/dpi600\lati1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/
+ljfour/lh/lh-t2a/dpi600\labi1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\font
+s/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX
+\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Lenovo\AppData\Local\M
+iKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Lenovo\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk><D:/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmex10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
+><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/latxfont/line
+10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on lecture7.pdf (2 pages, 138050 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
+ 238 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

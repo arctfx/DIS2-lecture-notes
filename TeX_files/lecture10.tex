@@ -75,6 +75,37 @@
 	&x+y=(x_1+y_1,x_2+y_2,...,x_n+y_n)\\
 	&x\in\mathbb{R}\\
 	&\lambda x =(\lambda x_1, \lambda x_2, ..., \lambda x_n)\\
+	&\mathcal{O} = (0,0,...,0)\\
 	\end{align*}
-	
+
+	\begin{definition}
+		\underline{Норма}\\
+		$\|.\|:\mathbb{R}^n \rightarrow [a,+\infty)$ е норма в $\mathbb{R}^n$, ако са изпълнени следните условия:\\
+		1) $\|x\|=0 \Leftrightarrow x=\mathcal{O}$\\
+		2) $\|\lambda x\| = |\lambda|.\|x\|\quad\forall\lambda\in\mathbb{R}^n\spc\forall x \in\mathbb{R}^n$\\
+		3) $\|x+y\|\leq \|x\|+\|y\|\quad\forall x,y \in\mathbb{R}^n$ (неравенство на триъгълника)
+	\end{definition}
+	$\|x-y\|=\|(x-z)+(z-y)\|\leq\|x-z\|+\|z-y\|$
+	\begin{definition}
+		\underline{Евклидова норма}\\
+		$\|x\|=\sqrt{\sum_{i=1}^{n}x_i^2}$ - евклидова норма в $\mathbb{R^n}$\\
+		$d(x,y) = \|y-x\|$
+	\end{definition}
+	\begin{definition}
+		\underline{Скаларно произведение}\\
+		$\langle x,y \rangle = \sum_{i=1}^{n}x_i y_i\quad \rightarrow \|x\| = \sqrt{\langle x, y \rangle}$\\
+		$\spc$\\
+		Свойство на скаларното произведение: \textbf{Неравенство на Коши-Буняковски-Шварц}\\
+		\[|\langle x, y \rangle| \leq \|x\|.\|y\|\quad \forall x,y \in \mathbb{R}^n\]
+		$\spc$\\
+		Алтернативен запис на неравеството е:\\
+		$\left|\sum_{i=1}^{n}x_iy_i\right|\leq \sqrt{\sum_{i=1}^{n}x_i^2}.\sqrt{\sum_{i=1}^{n}y_i^2}$\\
+		
+	\end{definition}
+	$\lambda\in\mathbb{R}\quad 0\leq\|x+\lambda y\|^2 = \langle x+\lambda y, x+\lambda y \rangle = $\\
+	$\|x\|^2 + 2\lambda \langle x,y \rangle +\lambda^2.\|y\|^2$\\
+	$(2\langle x,y \rangle)^2 - 4\|x |^2.\|y\|^2 \leq 0$\\
+	$(\langle x,y \rangle)^2 \leq \|x\|^2.\|y\|^2$\\
+	$\spc$\\
+	$\|x+y\|^2 = \|x\|^2 + 2\langle \rangle nnmk$
 \end{document}

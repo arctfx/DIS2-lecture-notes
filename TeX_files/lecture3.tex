@@ -1,14 +1,23 @@
 \documentclass[12pt]{article}
-\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[a4paper, margin=2.5cm]{geometry}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel}
-
+\usepackage{wrapfig}
 \usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
 \usepackage{amsfonts}
+\usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{25A9}{\dash}
 \usepackage{color}
@@ -34,13 +43,31 @@
 \def\lowint{
 	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
+%halfbox
+\newtcbox{\rbbox}[1][]{on line, sharp corners, colframe=white,coltext=white, colback=darkgray, size=small, toprule=0pt, leftrule=0pt, #1}
+\newcommand{\halfbox}[1]{\rbbox{#1}\quad}
+
 \begin{document}
 	\selectlanguage{russian}
 	\color{white}
 	\pagecolor{darkgray}
 	\title{Записки по ДИС2 - Лекция 3}
+	\date{04.05.2023}
 	\maketitle
-	\textbf{ }
+	\begin{center}
+		\Large
+		\textbf{Свойства на определените интеграли. Теорема на Лайбниц-Нютон. Теорема за средните стойности.}
+	\end{center}
+
+	$\spc$\\
+	1) Линейност\\
+	2) Адитивност\\
+	3) Позитивност\\
+	4) Теорема за средните стойности\\
+	$f,g: \left[a,\spc b\right] \rightarrow \mathbb{R}$ интегруеми\\
+	$g(x) \geq 0 \forall x \in [a,b]$\\
+	$m \leq f(x) \leq M \forall x \in [a,b]$\\
+	Тогава $\quad m\int_{a}^{b}\leq \int_{a}^{b}f(x)g(x)dx\leq M\int_{a}^{b}g(x)dx$\\
 	
 	%LEMMA1
 	\begin{lemma}
@@ -60,6 +87,59 @@
 	\textbf{Доказателство:} \textbf{(Iсл.)} Нека ...\\
 	\textbf{(Iсл.)}........
 	$\blacksquare$
+	% END PROOF
+	
+	............
+	............
+	
+	\section*{Фундаментална теорема на анализа}
+	\begin{proposition}
+		$F: \Delta\rightarrow\mathbb{R} \text{ е непрекъсната,}\quad x\in\Delta,\quad$\\
+		\begin{math}
+		[x-\varepsilon,x+\varepsilon]\subset\Delta \Rightarrow f \text{ - интегруема в }
+		[x-\varepsilon,x+\varepsilon]
+		\Rightarrow f \text{ - ограничена в }[x-\varepsilon,x+\varepsilon]
+		\end{math}
+		\begin{align*}
+		&F(y)-F(x) = \int_{a}^{y}f(t)dt-\int_{a}^{x}f(t)dt = \int_{a}^{y}f(t)dt,
+		\quad y \in [x-\varepsilon,x+\varepsilon]\\
+		&|F(y)-F(x)| =
+		\left| \int_{x}^{y}f(t)dt \right| \leq \int_{\min\{x,y\}}^{\max\{x,y\}}|f(t)|dt \leq M |x-y|\\
+		&\Rightarrow \lim\limits_{y\to x} F(y)=F(x)
+		\end{align*}
+	Ако $x$ е десен кран на $\Delta$, то разглеждаме $[x-\varepsilon,x]\subset\Delta$ ...\\
+	Ако $x$ е десен кран на $\Delta$, то разглеждаме $[x,x+\varepsilon]\subset\Delta$ ...\\
+	\halfbox{Забележка} $\int_{a}^{b}1.dt = b-a,\quad a\leq b$
+	\end{proposition}
+
+	% THEOREM
+	\begin{theorem}\textbf{\underline{Нютон-Лайбниц}}
+		$\spc$\\
+		\begin{math}
+			Нека f:\Delta\rightarrow\mathbb{R},\spc \Delta\text{ - интервал, } a\in\Delta, f \text{ е интегруема в } [a,x] \text{ за всяко } x\in\Delta; F(x) \text{ ще } \\
+			\text{нарираме примитивна на } f(x), \text{ където }
+			F(x) := \int_{a}^{x}f(t)dt;
+			\text{ Нека допълнително } f \\
+			\text{е непрекъсната в } x\in\Delta.
+			\text{ Тогава } F \text{ е диференцируема в } x \text{ и } F'(x) = f(x). 
+		\end{math}
+	\end{theorem}
+	% BEGIN PROOF
+	\underline{Доказателство:}\\
+	\begin{align*}
+		&\left|\frac{F(x+h)-F(x)}{h}-f(x)\right| = \left|\frac{\int_{a}^{x+h}f(t)dt-\int_{a}^{x}f(t)dt}{h}-f(x)\right| = \\
+		&=\left|\frac{1}{h}\int_{x}^{x+h}f(t)dt-\frac{1}{h}\int_{x}^{x+h}f(x)dt\right| =
+		\left|\frac{1}{h}\int_{x}^{x+h}(f(t)-f(x))dt\right| \\
+	\end{align*}
+	\begin{math}
+		h>0 \rightarrow \left|\frac{1}{h}\int_{x}^{h+x}(f(t)-f(x))dt\right| \leq \frac{1}{|h|}\int_{x}^{x+h}|f(t)-f(x)|dt \leq \frac{1}{|h|}\int_{x}^{x+h}\varepsilon\spc dt = \varepsilon \\
+		h<0 \rightarrow
+		\left|\frac{1}{h}\int_{x}^{x+h}(f(t)-f(x))dt\right|
+		\leq \frac{1}{|h|}\int_{x+h}^{x}|f(t)-f(x)|dt \leq
+		\frac{1}{|h|}\int_{x+h}^{x}\varepsilon\spc dt =
+		\varepsilon \frac{|h|}{|h|}=\varepsilon
+	\end{math}
+	
 	% END PROOF
 	
 	

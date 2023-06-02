@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{25A9}{\dash}
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.1}
+
+\everymath{\displaystyle}
+
+%Riemann integrals
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{
+	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+%Halfbox
+\newcommand{\halfbox}[1]{\underline{\textbf{#1}:}\textbf{\large{| }}}
+%Right cases bracket
+\newenvironment{rcases}
+{\left.\begin{aligned}}
+	{\end{aligned}\right\rbrace}
+
+%NEWTHEOREMS
+\newtheorem{proposition}{Твърдение}
+\newtheorem{definition}{Def.}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Th.}
+\newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\spc}{\text{ }}
+
+%BEGIN DOCUMENT
+\begin{document}
+	\selectlanguage{russian}
+	\color{white}
+	\pagecolor{darkgray}
+	\title{Записки по ДИС2 - Лекция 12}
+	\date{11.05.2023}
+	\maketitle
+	\begin{center}
+		\Large
+		\textbf{Частни производни.Градиент.Производна по направление.}
+	\end{center}
+	
+	%###########################################################
+	Производната е локална линейна апроксимация на функцията.\\
+	$f(x) = f(x_0)+f'(x_0)(x-x_0)+R(x;\spc x_0)$\\
+	$\frac{R(x;\spc x_0)}{|x-x_0|}\underset{x\to x_0}{\longrightarrow}0$\\
+	
+	\section*{Геометрична представа}
+	...\\
+
+
+	
+	\section*{Диференцируемост}
+	\begin{definition}
+		$U$ - отворено множество в $\mathbb{R}^n, x_0\in U\quad f:U\rightarrow\mathbb{R}$\\
+		Казваме, че $f$ е диференцируема в $x_0$, ако съществува линеен оператор $\partial f(x_0)$ (нарича се диференциал на $f$ в т. $x_0$) такъв, че \\
+		$f(x)=f(x_0)+\partial f(x_0)(x-x_0)+o(\|x-x_0\|)$ или\\
+		$\lim\limits_{x\to x_0}\frac{f(x)-f(x_0)-\partial f(x_0)(x-x_0)}{\|x-x_0\|}=0$
+	\end{definition}
+	$f(x_0 +h) = f(x_0) + df(x_0)h + o(\|h\|)\quad $ или 
+	$\lim\limits_{h\to\mathcal{O}}\frac{f(x_0 +h) - f(x_0) - df(x_0)(h)}{\|h\|} = 0$\\
+	
+	\begin{align*}
+		&df(x_0) : \mathbb{R}^n \rightarrow \mathbb{R}\\
+		&e_1 = (1,0,...,0)\\
+		&e_2 = (0,1,...,0)\\
+		&	.....\\
+		&e_i = (0,..,0,\underset{i\text{-та позиция}}{1},0,..,0)\\
+		&h = (h_1,h_2,...,h_n)
+	\end{align*}
+	$df(x_0)(h)=df(x_0)\left(\sum_{i=1}^{n}h_i e_i\right) = \sum_{i=1}^{n}h_i . df(x_i)(e_i) = $
+	$\big\langle \spc (\spc df(x_0)(e_1),\spc df(x_0)(e_2),\spc...,\spc df(x_0)(e_n)\spc),\quad h\spc\big\rangle$
+	
+	\section*{Частни производни}
+	\begin{definition}
+		\underline{Частна производна}\\
+		Нека $\{x_0 + \lambda e_i : \lambda \in \mathbb{R}\}\text{ - права през }x_0\text{, успоредна на }e_i$. 
+		$\frac{\partial f}{\partial x_i}(x_0) := \lim\limits_{\lambda\to0}\frac{f(x_0+\lambda e_i)}{\lambda}$ ще наричаме частна производна на $f$ в т. $x_0$ по $x_i$.
+	\end{definition}
+	\halfbox{Пример}: Частна производна на $f$ в т. $x_0$ по $x_1$:\\
+	$\frac{\partial f}{\partial x_1}(x_0) = \lim\limits_{\lambda to 0}\frac{f(x_1^0+\lambda, x_2^0, ..., x_n^0)-f(x_1^0, ..., x_n^0)}{\lambda}$, където точката $x_0 = (x_1^0, ..., x_n^0)$.
+	
+	\begin{proposition}
+		Ако $f$ e диференцируема в $x_0$, то $\frac{\partial f}{\partial x_i}(x_0)$ съществува за всяко $i\in\{1,...,n\}$. При това $df(x_0)(e_i)=\frac{\partial f}{\partial x_i}(x_0)$.
+	\end{proposition}
+	%BEGIN PROOF
+	\underline{Доказателство}:\\
+	\begin{math}
+		\lim\limits_{\lambda\to0}\frac{f(x_0+\lambda e_i)-f(x_0)}{\lambda} = \lim\limits_{\lambda\to0}\frac{f(x_0+\lambda e_i)-f(x_0)-\partial f(x_0)(\lambda e_i)+\partial f(x_0)(\lambda e_i)}{\lambda} = \\
+		\lim\limits_{\lambda\to 0}\left[\frac{f(x_0+\lambda e_i) - f(x_0 - df(x_0)(\lambda e_i))}{\|\lambda e_i\|}.sgn(\lambda) + df(x_0)(e_i)\right] =
+		0 + df(x_0)(e_i)
+	\end{math} \begin{flushright}
+		$\square$
+	\end{flushright}
+	%END PROOF
+	
+	
+	
+	\section*{Градиент}
+	...\\
+	\begin{proposition} \textbf{Диференцируемите функции са непрекъснати}\\
+		$U\subset\mathbb{R}^n$ - отворено множество; нека $f:U\rightarrow\mathbb{R}$ и $f$ е диференцируема в $x_0\in U$. Тогава $f$ е непрекъсната в $x_0$.
+	\end{proposition}
+	\underline{Доказателство}:\\
+	...
+	
+	\section*{Производна по направление}
+	\begin{proposition}
+		Ако $f$ е диференцируема в $x_0$, то $f$ има производна в $x_0$ по всяко направление. При това\\
+		\[\frac{\partial f}{\partial l}(x_0)=df(x_0)(l)=<\nabla f(x_0),\spc l>\] 
+		
+		\underline{Забележка}: със символа $\nabla$ ще се отбелязва градиент на функция.
+	\end{proposition}
+	\halfbox{Следствие}\\
+	...
+	
+	\begin{theorem}
+		$U$ - отворено множество в $\mathbb{R}^n$ и $f:U\rightarrow \mathbb{R},\quad x_0\in U,\quad i\in\{1,...,n\}$,\\
+		$\frac{\partial f}{\partial x_i}$ съществуват в $U$ и са непрекъснати в $x_0$. Тогава $f$ е диференцируема в $x_0$.
+		
+	\end{theorem}
+	\halfbox{Следствие}\textbf{\textit{Гладките функции са диференцируеми}}\\
+	...
+\end{document}
