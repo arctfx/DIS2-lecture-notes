@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.24)  28 MAY 2023 22:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.24)  6 JUN 2023 22:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -989,7 +989,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \author given.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--71
+Underfull \hbox (badness 10000) in paragraph at lines 62--73
 
  []
 
@@ -997,52 +997,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--71
 
 {C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
-LaTeX Warning: Command \CYRN invalid in math mode on input line 119.
+LaTeX Warning: Command \CYRN invalid in math mode on input line 121.
 
 
-LaTeX Warning: Command \cyre invalid in math mode on input line 119.
+LaTeX Warning: Command \cyre invalid in math mode on input line 121.
 
 
-LaTeX Warning: Command \cyrk invalid in math mode on input line 119.
+LaTeX Warning: Command \cyrk invalid in math mode on input line 121.
 
 
-LaTeX Warning: Command \cyra invalid in math mode on input line 119.
+LaTeX Warning: Command \cyra invalid in math mode on input line 121.
 
 Missing character: There is no Í in font cmr12!
 Missing character: There is no å in font cmr12!
 Missing character: There is no ê in font cmr12!
 Missing character: There is no à in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
-[2] (lecture3.aux) ) 
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 163--167
+
+ []
+
+[3] (lecture3.aux) ) 
 Here is how much of TeX's memory you used:
  29747 strings out of 475385
  731088 string characters out of 2793319
- 1232897 words of memory out of 3000000
+ 1237897 words of memory out of 3000000
  50614 multiletter control sequences out of 15000+600000
  487241 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,10n,118p,733b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 115i,12n,118p,733b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/l
-h-t2a/dpi600\labi1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour
-/lh/lh-t2a/dpi600\lati1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/l
-jfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts
-/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\
-fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Lenovo\AppData\Local\Mi
-KTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Lenovo\AppData\Loc
-al\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk><D:/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.p
-fb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-<D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10
-.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lecture3.pdf (2 pages, 162586 bytes).
+h-t2a/dpi600\larm0800.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour
+/lh/lh-t2a/dpi600\labi1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/l
+jfour/lh/lh-t2a/dpi600\lati1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts
+/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\
+fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Lenovo\AppData\Local\Mi
+KTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Lenovo\AppData\Loc
+al\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Lenovo\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk><D:/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy8.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on lecture3.pdf (3 pages, 174508 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
+ 285 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

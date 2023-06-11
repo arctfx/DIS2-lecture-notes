@@ -4,12 +4,37 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel}
 
+\usepackage{wrapfig}
 \usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
 \usepackage{amsfonts}
+\usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{amssymb}
 \usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{shadings}
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{25A9}{\dash}
 \usepackage{color}
@@ -29,10 +54,7 @@
 \newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 %Halfbox
 \newcommand{\halfbox}[1]{\underline{\textbf{#1}:}\textbf{\large{| }}}
-%Right cases bracket
-\newenvironment{rcases}
-{\left.\begin{aligned}}
-	{\end{aligned}\right\rbrace}
+
 
 %NEWTHEOREMS
 \newtheorem{proposition}{Твърдение}
@@ -52,18 +74,17 @@
 	\maketitle
 	\begin{center}
 		\Large
-		\textbf{Частни производни.Градиент.Производна по направление.}
+		\textbf{Диференцируемост. Частни производни. Градиент. Производна по направление. Гладки функции}
 	\end{center}
 	
 	%###########################################################
+	
+	\section*{Геометрична представа}
 	Производната е локална линейна апроксимация на функцията.\\
 	$f(x) = f(x_0)+f'(x_0)(x-x_0)+R(x;\spc x_0)$\\
 	$\frac{R(x;\spc x_0)}{|x-x_0|}\underset{x\to x_0}{\longrightarrow}0$\\
-	
-	\section*{Геометрична представа}
-	...\\
-
-
+	$\spc$\\
+	.....\\
 	
 	\section*{Диференцируемост}
 	\begin{definition}
@@ -72,8 +93,8 @@
 		$f(x)=f(x_0)+\partial f(x_0)(x-x_0)+o(\|x-x_0\|)$ или\\
 		$\lim\limits_{x\to x_0}\frac{f(x)-f(x_0)-\partial f(x_0)(x-x_0)}{\|x-x_0\|}=0$
 	\end{definition}
-	$f(x_0 +h) = f(x_0) + df(x_0)h + o(\|h\|)\quad $ или 
-	$\lim\limits_{h\to\mathcal{O}}\frac{f(x_0 +h) - f(x_0) - df(x_0)(h)}{\|h\|} = 0$\\
+	$f(x_0 +h) = f(x_0) + df(x_0)h + o(\|h\|)\quad$ или 
+	$\quad\lim\limits_{h\to\mathcal{O}}\frac{f(x_0 +h) - f(x_0) - df(x_0)(h)}{\|h\|} = 0$\\
 	
 	\begin{align*}
 		&df(x_0) : \mathbb{R}^n \rightarrow \mathbb{R}\\
@@ -110,30 +131,66 @@
 	%END PROOF
 	
 	
-	
 	\section*{Градиент}
-	...\\
+	\begin{definition}
+		\underline{Градиент}\\
+		$grad f(x_0) := \left( \frac{\partial f}{\partial x_1}(x_0), \frac{\partial f}{\partial x_2}(x_0), ..., \frac{\partial f}{\partial x_n}(x_0)\right)$, \color{gray}//алтернативно ще се отбелязва с $\nabla$
+		\color{white}
+	\end{definition}
+	$\spc$\\
+	\[\tikzmarkin[set fill color=red!30!black, set border color=red!30!purple]{z1}(0.5,-0.45)(-0.5,0.7)
+	df(x_0)(h) = \langle grad f(x_0), h\rangle
+	\tikzmarkend{z1}\]\\
+
 	\begin{proposition} \textbf{Диференцируемите функции са непрекъснати}\\
 		$U\subset\mathbb{R}^n$ - отворено множество; нека $f:U\rightarrow\mathbb{R}$ и $f$ е диференцируема в $x_0\in U$. Тогава $f$ е непрекъсната в $x_0$.
 	\end{proposition}
 	\underline{Доказателство}:\\
-	...
+	\begin{math}
+		\lim\limits_{x\to x_0}f(x) = \lim\limits_{x\to x_0}(f(x)-f(x_0)) + f(x_0) = f(x_0) + \lim\limits_{x\to x_0}\frac{f(x)-f(x_0)-df(x_0)(x-x_0)}{\|x-x_0\|}.\\
+		.\|x-x_0\| + \lim\limits_{x\to x_0}df(x_0)(x-x_0) = f(x_0) + 0 + 0
+	\end{math}\\
+	(Линейните оператори в $\mathbb{R}^n$ са непрекъснати)
 	
 	\section*{Производна по направление}
+	\begin{math}
+		U\subset \mathbb{R}^n, U - \text{отворено, } x_0 \in U, f:U\rightarrow\mathbb{R},\spc l\in\mathbb{R}^n \spc \{x_0+\lambda l:\lambda \in \mathbb{R}\}\\
+		\{\lambda \in \mathbb{R}: x_0 + \lambda l \in U\} - \text{околност на }0\\
+		B_\delta (x_0) \subset U\quad
+		x_0 + \lambda l \in B_\delta (x_0) \Leftrightarrow \|\lambda l\|<\delta \Leftrightarrow |\lambda|.\|l\|<\delta\\
+		\spc\\
+		\frac{\partial f(x_0)}{\partial l} := \lim\limits_{\lambda \to 0}\frac{f(x_0 +\lambda l) - f(x_0)}{\lambda} \quad\longleftarrow \quad
+	\end{math} производна на $f$ в т. $x_0$ по направление $l$
 	\begin{proposition}
 		Ако $f$ е диференцируема в $x_0$, то $f$ има производна в $x_0$ по всяко направление. При това\\
 		\[\frac{\partial f}{\partial l}(x_0)=df(x_0)(l)=<\nabla f(x_0),\spc l>\] 
 		
 		\underline{Забележка}: със символа $\nabla$ ще се отбелязва градиент на функция.
 	\end{proposition}
+	\begin{math}
+		\lim\limits_{\lambda\to 0}\frac{f(x_0+\lambda l) - f(x_0)}{\lambda} = \lim\limits_{\lambda\to 0}\frac{f(x_0 +\lambda l) - f(x_0) - df(x_0)(\lambda l) + df(x_0)(\lambda l)}{\lambda} =\\
+		\lim\limits_{\lambda\to 0}\left[\frac{f(x_0 +\lambda l) - f(x_0) -\lambda df(x_0)(l)}{\lambda} + \frac{\lambda df(x_0)(l)}{\lambda}\right] = \\
+		df(x_0)(l) + \lim\limits_{\lambda\to 0}\frac{f(x_0+\lambda l) - f(x_0) - df(x_0)(\lambda l)}{\|\lambda l\|}.\|l\|.sgn(\lambda) = df(x_0)(l)
+	\end{math}\\
 	\halfbox{Следствие}\\
-	...
+	\begin{math}
+		\max{\frac{\partial f}{\partial l}(x_0) : \|l\| = 1} = \|grad f(x_0)\| \text{ и се достига за } l=\frac{grad f(x_0)}{\|grad f(x_0)\|} \\
+		\left|\frac{\partial f}{\partial l}(x_0)\right| = \left|\langle gradf(x_0), l\rangle\right| \leq \|grad f(x_0)\|.\|l\|\\
+		\min{\frac{\partial f}{\partial l}(x_0) : \|l\| = 1} = -\|grad f(x_0)\| \text{ и се достига за } l=-\frac{grad f(x_0)}{\|grad f(x_0)\|} \\
+	\end{math}
 	
 	\begin{theorem}
 		$U$ - отворено множество в $\mathbb{R}^n$ и $f:U\rightarrow \mathbb{R},\quad x_0\in U,\quad i\in\{1,...,n\}$,\\
 		$\frac{\partial f}{\partial x_i}$ съществуват в $U$ и са непрекъснати в $x_0$. Тогава $f$ е диференцируема в $x_0$.
-		
 	\end{theorem}
+	\begin{definition}
+		Нека $U$ е отворено множество в $\mathbb{R}^n$, $f: U \rightarrow \mathbb{R}$. Тогава 
+		$f$ се нарича \textbf{гладка} ($f\in C^1(U, \mathbb{R})$), ако $\frac{\partial f}{\partial x_i}$ съществуват и са непрекъснати в $U$ за всяко $i\in\{1,..,n\}$\\
+	\end{definition}
 	\halfbox{Следствие}\textbf{\textit{Гладките функции са диференцируеми}}\\
-	...
+	\begin{math}
+		\delta > 0, B_\delta(x_0) \in U, \quad h \in \mathbb{R}^n, \|h\| < \delta\\
+		f(x_0+h)-f(x_0)=(f(x_0 + h_1e_1) - f(x_0)) + f(x_0 + h_1)
+		\textasteriskcentered
+	\end{math}
 \end{document}

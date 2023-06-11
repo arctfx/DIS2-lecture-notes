@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{shadings}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{25A9}{\dash}
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.1}
+
+\everymath{\displaystyle}
+
+%Riemann integrals
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{
+	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+%Halfbox
+\newcommand{\halfbox}[1]{\underline{\textbf{#1}:}\textbf{\large{| }}}
+
+
+%NEWTHEOREMS
+\newtheorem{proposition}{Твърдение}
+\newtheorem{definition}{Def.}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Th.}
+\newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\spc}{\text{ }}
+
+%BEGIN DOCUMENT
+\begin{document}
+	\selectlanguage{russian}
+	\color{white}
+	\pagecolor{darkgray}
+	\title{Записки по ДИС2 - Лекция 13}
+	\date{25.05.2023}
+	\maketitle
+	\begin{center}
+		\Large
+		\textbf{Диференциране на композиция}
+	\end{center}
+	
+	%###########################################################
+	
+	\section*{Преговор}
+	\subsection*{Функции от вида $\mathbb{R} \r,   ightarrow \mathbb{R}^n$} 
+	\begin{math}
+		f: U \rightarrow \mathbb{R}, \spc U \subset \mathbb{R}^n - \text{ отворено}, \spc x_0\in U, \spc
+		df(x_0): \mathbb{R}^n \rightarrow \mathbb{R} - \text{ линеен оператор такъв, че: }\\
+		f(x) = f(x_0) + df(x_0)(x-x_0) + \varphi(x, x_0) \text{ и } \frac{\varphi(x, x_0)}{\|x-x_0\|}\underset{x\to x_0}{\longrightarrow}0.
+	\end{math}
+	От предната лекция имаме следните твърдения:\\
+	\begin{proposition}
+		Ако $f$ е диференцируема в $x_0$, то частните производни $\frac{\partial f}{\partial x_i}(x_0) = \lim\limits_{\lambda \to 0}\frac{f(x_0 + \lambda e_i) - f(x_0)}{\lambda}$, $i\in\{1,..,n\}$ съществуват и $\frac{\partial f}{\partial x_i}(x_0) = df(x_0)(e_i)$.
+	\end{proposition}
+	$\nabla f(x_0) = \left(\frac{\partial f}{\partial x_1}(x_0), ..., \frac{\partial f}{\partial x_n}(x_0)\right)$
+	$\quad df(x_0)(h) = \langle \nabla f(x_0), h\rangle$ 
+	\begin{proposition}
+		Ако частните производни $\frac{\partial f}{\partial x_i}(x_0)$ съществуват в $U$ и са непрекъснати в $x_0$, то $f$ е диференцируема в $x_0$.
+	\end{proposition}
+	
+	\subsection*{Функции от вида $\mathbb{R}^m \rightarrow \mathbb{R}^n$}
+	\begin{math}
+		f: U \rightarrow \mathbb{R}^m, \spc U\subset \mathbb{R} - \text{ отворено}, \spc x_0\in U,
+		\spc f(x) = \begin{pmatrix}
+						f_1(x) \\
+						\vdots \\
+						f_m(x)
+					\end{pmatrix}
+	\end{math}
+	\begin{proposition}
+		$f$ е диференцируема в $x_0$, ако $f(x) = f(x_0) + df(x_0)(x-x_0) + o(\|x-x_0\|)$, където $ df(x_0):\mathbb{R}^m \rightarrow \mathbb{R}^n$ - линеен оператор $\Leftrightarrow f_i \text{ е диференцируема в } x_0 \text{ за всяко } i = \overline{1, m}$. Тоест:\\
+		\begin{math}
+		df(x_0)(h) =
+			\begin{pmatrix}
+				\nabla f_1(x_0) \\
+				\vdots \\
+				\nabla f_m(x_0)
+			\end{pmatrix} h = f'(x_0)h, \text{ т.е. } \quad
+		f'(x_0) = 
+			\begin{pmatrix}
+				\frac{\partial f_1}{\partial x_1}(x_0)
+				\spc ..... \spc
+				\frac{\partial f_1}{\partial x_n}(x_0)
+				\\
+				..... \quad ..... \quad .....
+				\\
+				\frac{\partial f_m}{\partial x_1}(x_0)
+				\spc ..... \spc
+				\frac{\partial f_m}{\partial x_n}(x_0)
+			\end{pmatrix}_{(n \times m)}
+		\end{math}
+	\end{proposition}
+	
+	\section*{Диференциране на композиция}
+	Нека $x_0 \in U \subset \mathbb{R}^n - $ отворено, 
+	\quad $y_0 = f(x_0)\in V\subset \mathbb{R}^m - $ отворено.\\
+	$f:U\rightarrow V \quad  g:V\rightarrow \mathbb{R}^k$
+	\begin{proposition}
+		Нека $g \circ f : U \rightarrow \mathbb{R}^k, \spc$
+		$f, g$ - диференцируеми в $x_0$. \\
+		Тогава $g \circ f$ е диференцируема в $x_0$ и $d(g\circ f)(x_0) = dg(f(x_0))\circ df(x_0)$. 
+	\end{proposition}
+	%BEGIN PROOF
+	\underline{Доказателство}:
+	\textit{To be added...}\\
+	%END PROOF
+	
+	\section*{Инвариантност на формата на диференциала}
+\end{document}

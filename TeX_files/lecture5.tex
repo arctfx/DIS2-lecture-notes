@@ -4,11 +4,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel}
 
-\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{tcolorbox}
 \usepackage{amsfonts}
+\usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{25A9}{\dash}
 \usepackage{color}
@@ -28,10 +33,6 @@
 \newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 %Halfbox
 \newcommand{\halfbox}[1]{\underline{\textbf{#1}:}\textbf{\large{| }}}
-%Right cases bracket
-\newenvironment{rcases}
-	{\left.\begin{aligned}}
-	{\end{aligned}\right\rbrace}
 
 %NEWTHEOREMS
 \newtheorem{proposition}{Твърдение}
@@ -96,14 +97,14 @@
 	\end{aligned}
 	\]
 	
-	\textbf{(\RNum4)}\\
-	Повече от една особености. Нека $f$ е непрекъсната, тогава интегралът
+	\textbf{(\RNum4) Повече от една особености}\\
+	Нека $f$ е непрекъсната, тогава интегралът отляво е сходящ, ако и двата отдясно са сходящи:
 	\[
 	\begin{aligned}
 		\int_{-\infty}^{+\infty}f(t)\,\mathrm{d}t = \int_{-\infty}^{a}f(t)\,\mathrm{d}t + \int_{a}^{+\infty}f(t)\,\mathrm{d}t
 	\end{aligned}
 	\]
-	е сходящ, ако и двата отдясно са сходящи.\\
+	\\
 	
 	\halfbox{Пример} $\int_{0}^{+\infty}\frac{\mathrm{d}t}{\mathrm{ln}t}\spc = \spc\int_{0}^{\frac{1}{2}}\frac{\mathrm{d}t}{\mathrm{ln}t} + \int_{\frac{1}{2}}^{1}\frac{\mathrm{d}t}{\mathrm{ln}t} + \int_{1}^{2}\frac{\mathrm{d}t}{\mathrm{ln}t} + \int_{2}^{+\infty}\frac{\mathrm{d}t}{\mathrm{ln}t}$\\
 	
@@ -131,18 +132,19 @@
 		\]
 	\end{lemma}
 	%BEGIN PROOF
-	\textbf{\underline{Доказателство:}}\\sd
+	\textbf{\underline{Доказателство:}}\\
 	$\begin{aligned}
-		(\Rightarrow)\ &l = \lim\limits_{p\rightarrow +\infty}F(p) \ \Rightarrow \ \exists p_{0} \geq a \spc \forall p \geq p_{0}:\\
-		&\Rightarrow \ F(p) < l+1 \ \forall p \in [a, +\infty)\\
+		(\Rightarrow)\ &l = \lim\limits_{p\rightarrow +\infty}F(p) \ \Rightarrow \ \exists p_{0} \geq a \spc \forall p \geq p_{0}: F(p)\in(l-1,l+1)
+		\Rightarrow \ F(p) < l+1 \ \forall p \in [a, +\infty)\\
 		&a\leq p \leq p_{0} \rightarrow F(p) \leq F(p_{0}) < l+1\\
 		&p\geq p_{0} \rightarrow F(p) < l+1
 	\end{aligned}$
+	\\$\spc$
+	\\
 	$\begin{aligned}
-		(\Leftarrow)\ &l = \lim\limits_{p\rightarrow +\infty}F(p) \ \Rightarrow \ \exists p_{0} \geq a \spc \forall p \geq p_{0}:\\
-		&\Rightarrow \ F(p) < l+1 \ \forall p \in [a, +\infty)\\
-		&a\leq p \leq p_{0} \rightarrow F(p) \leq F(p_{0}) < l+1\\
-		&p\geq p_{0} \rightarrow F(p) < l+1
+		(\Leftarrow)\ &\mathbb{R}\ni l = \sup\{F(p):p\geq a\}\\
+		&\boxed{\varepsilon>0} \quad l+\varepsilon > \underbracket[0.10ex]{ l > l - \varepsilon}{} \Rightarrow \exists p_0 \geq a, \spc F(p_0) > l-\varepsilon \ 
+		quad (\text{от дефиниция на супремум})
 	\end{aligned}$
 	%END PROOF
 	
