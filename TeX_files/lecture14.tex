@@ -1,0 +1,291 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{shadings}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{25A9}{\dash}
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.1}
+
+\everymath{\displaystyle}
+
+%Riemann integrals
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{
+	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+%Halfbox
+\newcommand{\halfbox}[1]{\underline{\textbf{#1}:}\textbf{\large{| }}}
+
+
+%NEWTHEOREMS
+\newtheorem{proposition}{Твърдение}
+\newtheorem{definition}{Def.}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Th.}
+\newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\spc}{\text{ }}
+
+%BEGIN DOCUMENT
+\begin{document}
+	\selectlanguage{russian}
+	\color{white}
+	\pagecolor{darkgray}
+	\title{Записки по ДИС2 - Лекция 13}
+	\date{07.06.2023}
+	\maketitle
+	\begin{center}
+		\Large
+		\textbf{Теорема за неявната функия. Условни екстремуми. Множители на Лагранж.}
+	\end{center}
+	
+	%###########################################################
+	
+	\section*{Теорема за неявната функция}
+	$F(x,y) = 0$
+	\begin{definition}
+		Ако $f : D \rightarrow \mathbb{R}, \spc D \subset \mathbb{R}$ такава, че $f(x, f(x)) = 0 \spc \forall x \in D$, казваме, че $f$ е \textbf{неявна функция}, определена от $F(x,y) = 0$.
+	\end{definition}
+	
+	\begin{math}
+		\begin{aligned}
+			\halfbox{Пример} \spc
+			&F(x,y)=x^2+y^2-R^2, \quad R>0, \quad F(x,y)=0 \\
+			&\boxed{x^2+y^2=R^2} \rightarrow y=\pm\sqrt{R^2-x^2}, \quad x\in[-R,R] \\
+			&f(x) = \varepsilon(x)\sqrt{R^2 - x^2}, \quad \varepsilon(x) \in \{-1, 1\}
+		\end{aligned}
+	\end{math}
+
+	Нека $F$ е гладка функция, $F(x_0, y_0) = 0$.\\
+	$F(x, y) = F(x_0, y_0) + dF(x_0, y_0)(x-x_0, y-y_0) + o(\|(x-x_0, y-y_0)\|)$\\
+	$F(x, y) = F_x'(x_0, y_0)(x-x_0)+F_y'(x_0,y_0)(y-y_0) + o(\|x-x_0, y-y_0\|)$\\
+	\boxed{z = F_x'(x_0,y_0)(x-x_0)+F_y'(x_0,y_0)(y-y_0)}\\
+	$F(x,y) = x^2+y^2-R^2$\\
+	$\{(x,y,R(x,y))\}\cap\{z=0\} \quad F(x,y)=0$\\
+	
+	$0 = F_x'(x_0,y_0)(x-x_0) + F_y'(x_0,y_0)(y-y_0) \quad \leftarrow$ уравнение на допирателна към $\{(x,y)\in\mathbb{R}^2:F(x,y)=0\}$ в т. $(x_0, y_0)$
+	
+	
+	\begin{theorem}
+		\textbf{Теорема за неявните функции}\\
+		Нека $U$ е отворено подмножество на $\mathbb{R}^2$. $F:U\rightarrow \mathbb{R}, \spc F$ е непрекъсната. $F_y'$ съществува и е непрекъсната в $U, \spc (x_0, y_0) \in U, \spc F(x_0, y_0) = 0, \spc F_y'(x_0, y_0) \neq 0$. Тогава съществуват $\varepsilon>0$ и $\delta>0$ такива, че:\\
+		(а) \textbf{Съществува единствена} функция
+		$f:(x_0-\delta, x_0+\delta) \rightarrow (y_0 - \varepsilon, y_0 + \varepsilon)$ неявно зададена от уравнението $F(x,y) = 0$ (т.е. $F(x,f(x))=0 \spc \forall x \in (x_0-\delta, x_0+\delta)$). \\
+		(б) Така определена $f$ е непрекъсната. при това, ако $F_x'$ съществува и е непрекъсната в $U$, то $f$ е диференцируема в $x_0$ и $f'(x_0) = - \frac{F_x'(x_0,y_0)}{F_y'(x_0,y_0)}$.
+	\end{theorem}
+	%BEGIN PROOF
+	\underline{Доказателство}:\\
+	(Б.о.о.) $F_y'(x_0, y_0) > 0 \quad F_y'$ - непрекъсната $\Rightarrow$ съществува $V$ - околност на $(x_0, y_0), \spc V\subset U$ такава, че $F_y'(x,y)>0 \spc \forall(x,y)\in V$ \\
+	$\Rightarrow F(x_0, \textbf{.} )$ е строго растяща в околност $(y_0-\varepsilon, y_0+\varepsilon)$ на $y_0$\\
+	$\Rightarrow F(x_0, y_0 -\varepsilon)<0, \spc F(x_0, y_0 +\varepsilon)>0 \spc (F(x_0, y_0) = 0)$ \\ 
+	$\Rightarrow$ съществува $\delta >0$ такова, че: \\
+	(a) $[x_0 - \delta, x_0+\delta]  \times [y_0-\varepsilon, y_0 + \varepsilon] \subset V \subset U$\\
+	(б) $F(x, y_0 - \varepsilon) < 0 \spc \forall x \in (x_0 - \delta, x_0 + \delta)$\\
+	(в) $F(x, y_0 + \varepsilon) > 0 \spc \forall x \in (x_0 - \delta, x_0 + \delta)$\\
+	$\spc$\\
+	$x_1\in(x_0-\delta, x_0 + \delta) \rightarrow F(x_1, \textbf{.})$ - строго растяща в $[y_0-\varepsilon, y_0+\varepsilon]$\\
+	$F(x_0, y_0 - \varepsilon) < 0, F(x_1, y_0 + \varepsilon)> 0$ - непрекъсната; ползваме Теорема на Болцано\\
+	Съществува единствено $y_1\in(y_0-\varepsilon, y_0+\varepsilon)$ с $F(x_1, y_1)=0$. Полагаме $f(x_1) = y_1$\\
+	$\forall \varepsilon > 0 $ (достатъчно малко)\\
+	$\exists \delta > 0$ такова, че за всяко $x\in(x_0 - \delta, x_0 + \delta)$ е в сила $f(x)\in (f(x_0)-\varepsilon, f(x_0)+\varepsilon)$ т.е. $f$ е непрекъсната в $x_0$.\\
+	$x_1 \in (x_0-\delta, x_0 +\delta), \spc y_1 = f(x_1)$\\
+	Същата конструкция около $(x_1, y_1)$ ще даде непрекъснатост на $f$ в $x_1$. 
+	....
+	%END PROOF
+	(Общ случай)
+	
+	\section*{Условни екстремуми}
+	$M\subset \mathbb{R}^n \spc f:M\rightarrow \mathbb{R}^n$\\
+	\begin{definition}
+		Казваме, че $x_0\in M$ е точка на \textbf{локален условен минимум} за $f$, ако съществува околност $U$ на $x_0$ такава, че за всяка точка $x\in U\cap M$ да е в сила $f(x)\geq f(x_0)$.
+	\end{definition}
+	\begin{definition}
+		Казваме, че $x_0\in M$ е точка на \textbf{локален условен максимум} за $f$, ако съществува околност $U$ на $x_0$ такава, че за всяка точка $x\in U\cap M$ да е в сила $f(x)\leq f(x_0)$.
+	\end{definition}
+
+	%Пример
+	
+	\section*{Множители на Лагранж}
+	
+	Нека $U$ - отворено подмножество на $\mathbb{R}^n, \spc F:U\rightarrow \mathbb{R}^k, \spc F$ - гладка, $M=\{x\in\mathbb{R}^n:F(x)=\mathcal{O}\}$. \\
+	$M$ се състои от решенията на системата:
+	\begin{math}
+	\begin{cases*}
+		F_1(x_1,...,x_n) = 0\\
+		...........................\\
+		F_k(x_1,...,x_n) = 0\\
+	\end{cases*} \quad\quad x_0\in U,\spc F(x_0)=\mathcal{O}\\
+	\end{math}
+	Казваме, че $F_1,...,F_k$ са независими в $x_0$, ако матрицата:\\
+	\begin{math}
+	\begin{pmatrix}
+		\frac{\partial F_1}{\partial x_1}(x_0)
+		\spc
+		\frac{\partial F_1}{\partial x_2}(x_0)
+		\spc ..... \spc
+		\frac{\partial F_1}{\partial x_n}(x_0)
+		\\
+		..........\quad..........\quad.......\quad.........
+		\\
+		\frac{\partial F_k}{\partial x_1}(x_0)
+		\spc
+		\frac{\partial F_k}{\partial x_2}(x_0)
+		\spc ..... \spc
+		\frac{\partial F_k}{\partial x_n}(x_0)
+	\end{pmatrix}
+	\end{math}
+	има пълен ранг (т.е. рангът ѝ е $k$).
+	
+	%Пример
+	
+	\begin{theorem}\textbf{Множители на Лагранж}
+		Нека $U\subset{R}^n,\spc U $ - отворено, $k\leq n, \spc g,F_1,F_2,...,F_f : U \rightarrow \mathbb{R}$ са гладки.
+		Нека $x_0\in U, \spc F_1(x_0)=...=F_k(x_0)=0$ и $F_1,...,F_k$ са независими в $x_0$.
+		Нека $g$ има \textbf{локален условен екстремум} върху $M=\{x\in\mathbb{R}^n:F_1(x)=...=F_k(x)=0\}$ в т. $x_0$. Тогава съществуват $\lambda_1, ..., \lambda_n \in \mathbb{R}$ такива, че $\nabla g(x_0) = \sum_{i=1}^{k}\lambda_i \nabla f_i(x_0)$.
+	\end{theorem}
+	\begin{math}
+		\Phi(x_1,...,x_n,\lambda_1,...,\lambda_k) = g(x_1,...,x_n) \text{ - функция на Лагранж} \\
+		\sum_{i=1}^{k}\lambda_iF_i(x_1,...,x_n)
+	\end{math}
+	\\
+	Стационарни точки на $\Phi$:\\
+	\begin{math}
+		\begin{cases*}
+			\frac{\partial\Phi}{\partial x_j}(x, \lambda) = \frac{\partial g}{\partial x_j}(x) - \sum_{=1}^{k}\lambda_i\frac{\partial F_i}{\partial x_j}(x) = 0, j \in \{1,...,j\}
+			\\
+			\frac{\partial \Phi}{\partial \lambda_i}(x,\lambda) = -F_i(x)=0, \spc i\in\{1,...,k\}
+		\end{cases*}
+	\end{math}
+	\\
+	Имаме $n+k$ уравнение и $n+k$ неизвестни, следователно имаме пълен шанс да решим системата. Надяваме се да имаме краен брой решения, но това не винаги е възможно. Неизвестните съответно са $x_1,...,x_n,\lambda_1,...,\lambda_k$.
+	
+	%BEGIN PROOF
+	\underline{Доказателство:} на Теоремата на Лагранж\\
+	
+	\textit{Упътване: свеждаме към Теоремата на Ферма чрез Теоремата за неявните функции.}\\
+	$\spc$
+	\begin{math}
+		rg\begin{pmatrix}
+			\frac{\partial f_1}{\partial x_1}(x_0)
+			\spc ..... \spc
+			\frac{\partial f_1}{\partial x_n}(x_0)
+			\\
+			..... \quad ..... \quad .....
+			\\
+			\frac{\partial f_m}{\partial x_1}(x_0)
+			\spc ..... \spc
+			\frac{\partial f_m}{\partial x_n}(x_0)
+		\end{pmatrix}(x_0) = k
+		\quad
+	\end{math}
+	(Б.о.о.)
+	\begin{math}
+		det\begin{pmatrix}
+			\frac{\partial f_1}{\partial x_1}(x_0)
+			\spc ..... \spc
+			\frac{\partial f_1}{\partial x_n}(x_0)
+			\\
+			..... \quad ..... \quad .....
+			\\
+			\frac{\partial f_m}{\partial x_1}(x_0)
+			\spc ..... \spc
+			\frac{\partial f_m}{\partial x_n}(x_0)
+		\end{pmatrix}(x_0) \neq 0
+	\end{math}
+	\\
+	$\spc$
+	\\
+	\begin{math}
+		\begin{cases*}
+			F_1(x_1,...,x_k,x_{k+1},...,x_n) = 0
+			\\
+			.............................................
+			\\
+			F_k(x_1,...,x_k,x_{k+1},...,x_n) = 0
+		\end{cases*}
+	\end{math}
+	Според Теоремата за неявните функции имаме, че:\\
+	Съществуват $\delta>0,\spc \varepsilon>0$ такива, че съществува единствено(при това гладко) изображение $f:\underset{n-k\text{-мерно}}{\underbrace{B_\delta(x_{k+1}^0, ..., x_n^0)}} \longrightarrow \underset{k-\text{мерно}}{\underbrace{B_\varepsilon(x_1^0,...,x_k^0)}}; \quad$
+	\begin{math}
+		f = 		\begin{pmatrix}
+			f_1 \\
+			\vdots \\
+			f_k
+		\end{pmatrix}
+	\end{math}
+	 такова, че:\\
+	\begin{math}
+		\begin{cases*}
+			x_1 = f_1(x_{k+1},...,x_n)\\
+			...............................\\
+			x_k=f_k(x_{k+1},...,x_n)
+		\end{cases*} \Leftrightarrow
+		\begin{cases*}
+			F_1(x_1,...,x_n) = 0
+			\\
+			...........................
+			\\
+			F_k(x_1,...,x_n) = 0
+		\end{cases*}
+		\quad
+		\leftarrow
+		\text{ за }\spc
+		\begin{matrix*}[l]
+			(x_1,...,x_k)\in B_\varepsilon(x_1^0,...,x_k^0);
+			\\
+			(x_{k+1},...,x_n) \in B_\delta(x_{k+1}^0,...,x_n^0)
+		\end{matrix*}
+	\end{math}
+	\\
+	Нека $V = B_\varepsilon(x_1^0, ..., x_k^0)\times B_\delta(x_{k+1}^0,...,x_n^0)$ - околност на $x_0$, $V\subset U$.\\
+	\begin{math}
+		\varphi(x_{k+1},...,x_n) = g(f_1(x_{k+1},...,x_n),...,f_k(x_{k+1},...,x_n), x_{k+1}, ..., x_n)\\
+		\varphi:B_\delta(x_{k+1}^0,...,x_n^0)\longrightarrow \mathbb{R}\\
+		(f_1(x_{k+1},...,x_n), ..., f_k(x_{k+1},...,x_n), x_{k+1},...,x_n)\in M; \spc g
+	\end{math}
+	има условен екстремум в $x_0$ върху $M$ $\Rightarrow \varphi$ има (безусловен) локален екстремум в $(x_{k+1}^0,...,x_n^0)$.\\
+	Th. Ферма $\Rightarrow \nabla \varphi(x_{k+1}^0,...,x_n^0) = \mathcal{O}$, т.е. $\frac{\partial \varphi}{\partial x_{k+p}}(x_{k+p}^0,...,x_n^0)=0 \spc \forall p \in \{1,...,n-k\}$\\
+	\begin{math}
+		\frac{\partial\varphi}{\partial x_{k+p}}(x_{k+1}^0,...,x_n^0)=\sum_{j=1}^{k}\frac{\partial g}{\partial x_j}(x_0).\frac{\partial f_j}{\partial x_{k+p}}(x_{k+1}^0,...,x_n^0)+\frac{\partial g}{\partial x_{k+p}}(x_0)
+	\end{math} 
+	%END PROOF
+	
+\end{document}

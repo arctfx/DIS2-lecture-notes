@@ -1,0 +1,178 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{25A9}{\dash}
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.1}
+
+%TikZ hf-tikz
+\hfsetfillcolor{teal!50!black}
+\hfsetbordercolor{teal!80}
+
+%halfbox
+\newtcbox{\rbbox}[1][]{on line, sharp corners, colframe=white,coltext=white, colback=darkgray, size=small, toprule=0pt, leftrule=0pt, #1}
+\newcommand{\halfbox}[1]{\rbbox{#1}\quad}
+
+
+\everymath{\displaystyle}
+
+%Riemann integrals
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{
+	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+%NEWTHEOREMS
+\newtheorem{proposition}{Твърдение}
+\newtheorem{definition}{Def.}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Th.}
+\newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\spc}{\text{ }}
+
+%BEGIN DOCUMENT
+\begin{document}
+	\selectlanguage{russian}
+	\color{white}
+	\pagecolor{darkgray}
+	\title{Записки по ДИС2 - Лекция 9}
+	\date{26.04.2023}
+	\maketitle
+	\begin{center}
+		\Large
+		\textbf{Степенни редове.}
+	\end{center}
+	
+	%###########################################################
+	$\sum_{n=0}^{\infty}a_n(x-a)^n\spc \leftarrow$ степенен ред\\
+	$a_0 + a_1(x-a) + a_2(x-a)^2 + ...$\\
+	$D = \Biggl\{x\in \mathbb{R} : \sum_{n=0}^{\infty}a_n(x-a)^n \text{ е сходящ}\Biggr\}$ - област на сходимост\\
+	
+	\begin{center}
+		\textbf{\large\underline{Канонични примери за степенни редове}}
+	\end{center}
+	1) Геометрична прогресия\\
+	$\sum_{n=0}^{\infty}x^n = 1 + x + x^2 + ... = \frac{1}{1-x}$
+	$x\in (-1, 1) \leftarrow$ област на сходимост\\
+	$\spc$\\
+	$\spc$\\
+	2) $\sum_{n=0}^{\infty}\frac{x^n}{n!} \rightarrow x\in(-\infty, +\infty)$ - област на сходимост в $\mathbb{R}$\\
+	$\sum_{n=0}^{\infty}\left|\frac{x^n}{n!}\right|$ - $x$ е параметър. Прилагаме критерия на Даламбер:
+	$\frac{\left|\frac{x^{n+1}}{(n+1)!}\right|}{\left|\frac{x^n}{n!}\right|} = \frac{|x|}{n+1}\underset{n\to\infty}{\longrightarrow}0$\\
+	$\spc$\\
+	$\spc$\\
+	3) $\sum_{n=1}^{\infty}\frac{x^n}{n}\quad\longrightarrow\quad x\in[-1,1)$
+	$\quad\quad\quad\sum_{n=1}^{\infty}\frac{x^n}{n} = |x|.\frac{n}{n+1}\underset{n\to\infty}{\longrightarrow}|x|$\\
+	\begin{flalign*}\text{Критерия на Даламбер ни дава: } &|x|<1\text{ - абсолютно сходящ }\\
+	&|x|>1\text{ - разходящ}
+	\end{flalign*}
+	Сега разглеждаме в краищата на интервала: при \boxed{x=1} имаме хармоничния ред, който е разходящ; при \boxed{x=-1} редът е сходящ.\\
+	
+	\[\tikzmarkin[set fill color=red!30!black,
+	set border color=red!30!purple]{z1}(0.5,-0.45)(-0.5,0.7)
+	\mathbf{N.B. }\text{ Областта на сходимост е винаги с център точката }a.\text{ (степенни редове)}
+	\tikzmarkend{z1}\]
+	
+	\begin{definition}
+		$R\in[0,+\infty]\text{ се нарича радиус на сходимост на реда } sum_{n=0}^{\infty}a_n(x-a)^n$, ако $\sum_{n=0}^{\infty}a_n(x-a)^n$ е сходящ за всяко $x\in\mathbb{R}$ с $|x-a|>R$. Ако , то областта на сходимост има един от следните видове:
+		\begin{flalign*}&(a-R, a+R)\\ &[a-R, a+R)\\ &(a-R, a+R]\\ &[a-R, a+R]\end{flalign*}
+	\end{definition}
+
+	%
+	%%
+	%%%
+	%%%%
+	%%%%%
+	\pgfdeclarepattern{
+		name=hatch,
+		parameters={\hatchsize,\hatchangle,\hatchlinewidth},
+		bottom left={\pgfpoint{-.1pt}{-.1pt}},
+		top right={\pgfpoint{\hatchsize+.1pt}{\hatchsize+.1pt}},
+		tile size={\pgfpoint{\hatchsize}{\hatchsize}},
+		tile transformation={\pgftransformrotate{\hatchangle}},
+		code={
+			\pgfsetlinewidth{\hatchlinewidth}
+			\pgfpathmoveto{\pgfpoint{-.1pt}{-.1pt}}
+			\pgfpathlineto{\pgfpoint{\hatchsize+.1pt}{\hatchsize+.1pt}}
+			%\pgfpathmoveto{\pgfpoint{-.1pt}{\hatchsize+.1pt}}
+			%\pgfpathlineto{\pgfpoint{\hatchsize+.1pt}{-.1pt}}
+			\pgfusepath{stroke}
+		}
+	}
+	
+	\tikzset{
+		hatch size/.store in=\hatchsize,
+		hatch angle/.store in=\hatchangle,
+		hatch line width/.store in=\hatchlinewidth,
+		hatch size=10pt,
+		hatch angle=0pt,
+		hatch line width=.5pt,
+	}
+
+		\begin{tikzpicture}
+			\begin{scope}[dash pattern=on 5pt off 5pt on 5pt off 5pt,thick,font=\scriptsize]
+				\draw [draw] (+1,-1) circle (2.5);
+			\end{scope}
+			\path [draw=none, pattern=hatch, pattern color=gray] (+1,-1) circle (2.45);
+			\draw [line width=0.5mm,-stealth](1,-1) -- (2.7,0.7);
+			\node [below right,white] at (+1.8,-0.2) {$a$};
+			\node [below right,white] at (-1.8,1.8) {$\mathbb{C}$};
+		\end{tikzpicture}
+	В комплексната равнина в областта на сходимост са точките във вътрешността на окръжност с радиус \textit{а}. Във всички точки извън окръжността степенният ред е разходящ. В граничните точки не се знае дали е сходящ или разходящ.
+	\begin{lemma}
+		Нека $\sum_{n=0}^{\infty}a_n(\xi - a)^n$ е сходящ. Тогава $\sum_{n=0}^{\infty}a_n(x - a)^n$ е абсолютно сходящ за всяко $x \in \mathbb{R}$, за което $|x-a|<|\xi - a|$. 
+	\end{lemma}
+	%BEGIN PROOF
+	\textbf{\underline{Доказателство:}} $|x-a|<|\xi - a|$
+	\begin{flalign}
+		&\sum_{n=0}^{\infty}|a_n(x-a)^n|=\sum_{n=0}^{\infty}\underbrace{\left|a_n(\xi-a)^n\right|}_{\leq M}\left|\frac{x-a}{\xi-a}\right|^n&&
+	\end{flalign}
+	$\sum_{n=0}^{\infty}a_n(\xi - a)^n$ - сходящ $\Rightarrow a_n(\xi-a)^n\underset{n\to\infty}{\longrightarrow}0\Rightarrow\exists M\in\mathbb{R} \spc\forall n\in\mathbb{N}\cup\{0\}:|a_n(\xi -a)^n|\leq M$\\
+	$(1)\spc\leq\sum_{n=0}^{\infty}M.q^n,\quad q=\left|\frac{x-a}{\xi-a}\right|\in[0,1)\Rightarrow$ редът е сходящ от пр. за сравнение. $\square$
+	%END PROOF
+	
+	\begin{theorem}
+		Всеки степенен ред има радиус на сходимост. При това $\sum_{n=0}^{\infty}a_n(x-a)^n$ е абсолютно сходящ.
+	\end{theorem}
+	%BEGIN PROOF	\textbf{\underline{Доказателство:}} $\sum_{n=0^{\infty}a_n(x-a)^n$\\
+	$R := sup\Biggl\{\underbrace{|x-a|:\sum_{n=0}^{\infty}a_n(x-a)^n\text{е сходящ}}_{\neq \emptyset}\Biggr\}\quad R\in[0,+\infty]$\\
+	$x\in\mathbb{R}, |x-a|>R \Rightarrow \sum_{n=0}^{\infty}a_n(x-a)^n$ - разходящ.\\
+	$x\in\mathbb{R}, |x-a|<R \Rightarrow \exists\xi\in\mathbb{R}: |x-a|<|\xi-a|\text{ и }\sum_{n=0}^{\infty}a_n(x-a)^n$ - е сходящ.\\
+	Като приложим лемата, получаваме, че: $\sum_{n=0}^{\infty}a_n(x-a)^n$ е абсолютно сходящ. $\square$
+	%END PROOF
+	
+	\begin{theorem}
+		\textbf{Формула на Коши-Адамар}\\
+		Радиусът на сходимост на $\sum_{n=0}^{\infty}a_n(x-a)^n$ е $R = \frac{1}{\limsup\sqrt[n]{\mathbf{|}a_n\mathbf{|}}}$
+	\end{theorem}
+	(със съглашението $\textstyle\frac{1}{0}=+\infty,\spc\frac{1}{+\infty}=0$)\\
+	Припомняме дефиницията на $\limsup$: $\{b_n\}_{n=1}^{\infty}\rightarrow l = \limsup b_n,$ ако $l$ е точка на сгъстяване на $\{b_n\}_{n=1}^{\infty}$ и $\forall \varepsilon > 0 \spc\exists n_0 \in \mathbb{N} \spc\forall n \geq n_0 : b_n < l + \varepsilon$\\
+	
+	%BEGIN PROOF
+	\textbf{\underline{Доказателство:}} $l = \limsup\sqrt[n]{|a_n|}$, $R = \frac{1}{l}$\\
+	(a) $|x-a|<\frac{1}{l}$ $\quad l|x-a|<1\rightarrow \exists q : l|x-a|<q<1$
+	%END PROOF
+\end{document}

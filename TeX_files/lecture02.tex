@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{25A9}{\dash}
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.1}
+
+\newtheorem{proposition}{Твърдение}
+\newtheorem{definition}{Def.}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Th.}
+\newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\spc}{\text{ }}
+
+\everymath{\displaystyle}
+
+%Riemann integrals
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{
+	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+	\selectlanguage{russian}
+	\color{white}
+	\pagecolor{darkgray}
+	\title{Записки по ДИС2 КН2 - Лекция 2}
+	\date{02.03.2023}
+	\maketitle
+	\begin{center}
+		\Large
+		\textbf{Класове интегруеми функции. }
+	\end{center}
+
+	\begin{proposition}
+		Нека $f:\left[a, b\right] \rightarrow \mathbb{R}$ е ограничена и имаме произволно разбиване на интервала, в който е дефинирана.
+		%\textbackslash{}left[a,\textbackslash{}spc b\textbackslash{}right]
+		$\tau : a=x_{0}<x_{1}<x_{2}<...<x_{n}=b$.
+		Тогава $s_{f}\left(\tau\right)\spc=\spc inf\{\sigma_{f}\left(\tau,\spc\xi\right) : \xi\spc\text{- представителна точка}\}$;
+		$S_{f}\left(\tau\right)\spc=\spc sup\{\sigma_{f}\left(\tau,\spc\xi\right) : \xi\spc\text{- представителна точка}\}$.
+	\end{proposition}
+	\textbf{Доказателство:} ......
+	
+	\begin{definition}
+		Нека $d\left(\tau\right) := max\{x_{i}-x_{i-1} : i\in\{1,...,n\}\}$ и $\tau : a=x_{0}<...<x_{n}=b$. Казваме, че сумите на Риман за $f: \left[a, b\right] \rightarrow \mathbb{R}$ имат граница $I\in\mathbf{R}$, когато $d\left(\tau\right)$ клони към 0, ако за всяко $\varepsilon\geq 0$ съществува $\delta\geq 0$, такова че за всеки избор на подразбиване $\tau$ на $\left[a, b\right]$ с $d\left(\tau\right)\leq\delta$ и за всеки избор на предствавителна точка е в сила $|\sigma_{f}\left(\tau;\spc\xi\right)-I|\leq\varepsilon$.
+	\end{definition}
+	
+	\begin{lemma}
+		Нека $\tau : a=x_{0}<x_{1}<x_{2}<...<x_{n}=b$ е подразбиване на $\left[a, b\right]$. Нека $\tau^{*}\geq\tau$, $\tau^{*}$ се получава от $\tau$ чрез прибавянето на k точки. Тогава $0\leq S_{f}\left(f\right)-S_{f}\left(\tau^{*}\right)\leq...$.
+		Нека $m := \underset{\left[a, b\right]}{inf} f$ и $М := \underset{\left[a, b\right]}{sup} f$
+	\end{lemma}
+
+	\begin{theorem}
+		Нека $f: \left[a, b\right] \rightarrow \mathbb{R}$ и нека съществува  $\lim_{x\to\infty} \sigma_{f}\left(\tau;\spc\xi\right) = I$. Тогава f е ограничена, f е интегруема по Риман и $\int_{a}^{b} f = I$.
+		
+	\end{theorem}
+	\textbf{Доказателство:} Нека $f: \left[a, b\right] \rightarrow \mathbb{R}$ и $\epsilon > 0$ e достатъчно голямо. Нека $\epsilon = 3 > 0$ е фиксирано, oткъдето следва: \\
+	$\exists\delta>0\forall\tau, d(\tau)<\delta\forall\xi - представителни точки за \tau : |\sigma_{f}\left(\tau,\spc\xi\right)-I|<3$.\\
+	Нека $\tau : a=x_{0}<x_{1}<x_{2}<...<x_{n}=b$ е такова, че $d(\tau)<\delta$.
+	Тогава за всеки избор на $\xi_{i}\in\left[x_{i-1},\spc x_{i}\right],\spc i\in\{1,...,n\}$ е в сила\\
+	\[I-3 < \sum _{i=1}^{n}f(\xi_{i})(x_{i}-x_{i-1})<I+3\]
+	Достатъчно е да докажем, че $f$ е ограничена в $\left[x_{i-1},\spc x_{i}\right]$.\\
+	Фиксираме $\xi_{j}\in\left[x_{j-1},\spc x_{j}\right],\spc j\neq i$.\\
+	........
+	
+	\begin{theorem}
+		Ако $f: \left[a, b\right] \rightarrow \mathbb{R}$ е интегруема по Риман (следователно и $f$ е ограничена), то съществува $\lim_{x\to\infty} \sigma_{f}\left(\tau;\spc\xi\right) = \int_{a}^{b} f$.
+		
+	\end{theorem}
+
+	\begin{center}
+		\textbf{Основни свойства на интеграла}
+	\end{center}
+	(I) Линейност\\
+	$f,g:[a,b]\rightarrow\mathbb{R}$ интегруеми $\lambda\in\mathbb{R}\Rightarrow f+g, \lambda f $ са интегруеми и \\$\int_{a}^{b}(f+g)=\int_{a}^{b}f+\int_{a}^{b}g$\\
+	$\int_{a}^{b}\lambda f = \lambda\int_{a}^{b}f$\\
+	$\sigma_{f+g}(\tau,\xi)=\sigma_f(\tau,\xi)+\sigma_f(\tau,\xi)$\\
+	$\sigma_{\lambda f}(\tau,\xi)=\lambda \sigma_f(\tau,\xi)$\\
+	\boxed{\epsilon>0}, $\lim\limits_{d(\tau)\rightarrow0}\sigma_f(\tau,\xi)=\int_{a}^{b}f\longrightarrow \exists\delta_1>0\spc \forall\tau,d(\tau)<\delta_1\spc \forall\xi\text{ - представителна точка за }\tau:|\sigma_f(\tau,\xi)-\int_{a}^{b}f|<\frac{\varepsilon}{2}$\\
+	$S_g\rightarrow\exists\delta_2>0\spc \forall\tau,d(\tau)<\delta_2\spc \forall\xi\text{ - представителна точка за }\tau:|\sigma_g(\tau,\xi)-\int_{a}^{b}g|<\frac{\varepsilon}{2}$\\
+	$\delta:=\min{\delta_1,\delta_2}>0\quad\tau\text{ - подразбиване},d(\tau)<\delta\quad \xi\text{представителна точна за}\tau$\\
+	$\Rightarrow\Big|\sigma_{f+g}(\tau,\xi)-(\int_{a}^{b}f+\int_{a}^{b}g)\Big|=\Big|\Big(\sigma_{f}(\tau,\xi)-\int_{a}^{b}f\Big)+\Big(\sigma_g(\tau,\xi)-\int_{a}^{b}g\Big)\Big|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$\\
+	
+	$\spc$\\
+	(II) Адитивност
+	$f:[a,b]\rightarrow\mathbb{R},\spc f$ - интегруема, $а<c<b$\\
+	Тогава $f\Big|_{[a,c]}, f\Big|_{[c,b]}$ са интегруеми и $\int_{a}^{b}f=\int_{a}^{c}+\int_{c}^{b}f$\\
+	$\underset{\boxed{\varepsilon>0}}{f\text{ - интегруема}}\Rightarrow$ Съществува $\tau\text{ - подразбиване на }[a,b],\spc S_f(\tau)-s_f(\tau)<\varepsilon$\\
+	$\tau^*=\tau\cup\{c\}\Rightarrow S_f(\tau^*)-s_f(\tau^*)<\varepsilon$, където $\tau^*=\tau_1\cup\tau_2$, $\tau_1$ - подразбиване на $[a,c]$, $\tau_2$ - подразбиване на $[c,b]$\\
+	$S_f(\tau^*)=S_f(\tau_1)+S_f(\tau_2)$, $s_f(\tau^*)=s_f(\tau_1)+s_f(\tau_2)$\\
+	$S-f(\tau^*)-s_f(\tau^*)=\Big[S_f(\tau_1)-s_f(\tau_1)\Big]+\Big[S_f(\tau_2)-s_f(\tau_2)\Big]$\\
+	$\tau_n$ - подразбиване на $[a,b]$, съдържащо $c$ като деляща точка, $\xi_n$ - представителна точка за $\tau_n$, 
+	$d(\tau_n)\longrightarrow0$\\
+	$\tau_n=\tau_{n}^{'}\cup\tau_n^{''}$,
+	$\tau_{n}^{'}$- подразбиване на $[a,c]$,
+	$\tau_{n}^{''}$ - подразбиване на $[c,b]$\\
+	$\underset{\Big\downarrow n\to\infty}{\sigma_f(\tau_n,\xi_n)}=
+	\underset{\Big\downarrow n\to\infty}{\sigma_f(\tau_n^{'},\xi_n^{'})}+
+	\underset{\Big\downarrow n\to\infty}{\sigma_f(\tau_n^{''},\xi_n^{''})}$\\
+	$\int_{a}^{b}f\quad\quad\quad \int_{a}^{c}f\quad\quad\quad \int_{c}^{b}f$\\
+	\\
+	\underline{Уговорка}: Нека $f:\Delta\rightarrow\mathbb{R},\spc \Delta$ - интервал, $a,b\in\Delta$, $a<b$, тогава:\\
+	$\int_{a}^{a}f:=0\quad \int_{a}^{b}:=-\int_{b}^{a}$
+	
+	
+
+\end{document}

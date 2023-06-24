@@ -1,0 +1,176 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary {patterns.meta}
+\usepackage{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{hf-tikz}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{25A9}{\dash}
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.1}
+
+\newtheorem{proposition}{Твърдение}
+\newtheorem{corollary}{Следствие}
+\newtheorem{definition}{Def.}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Th.}
+\newcommand{\suma}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\spc}{\text{ }}
+
+\everymath{\displaystyle}
+
+%Riemann integrals
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{
+	\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+%halfbox
+\newtcbox{\rbbox}[1][]{on line, sharp corners, colframe=white,coltext=white, colback=darkgray, size=small, toprule=0pt, leftrule=0pt, #1}
+\newcommand{\halfbox}[1]{\rbbox{#1}\quad}
+
+\begin{document}
+	\selectlanguage{russian}
+	\color{white}
+	\pagecolor{darkgray}
+	\title{Записки по ДИС2 - Лекция 3}
+	\date{04.05.2023}
+	\maketitle
+	\begin{center}
+		\Large
+		\textbf{Свойства на определените интеграли. Теорема на Лайбниц-Нютон. Теорема за средните стойности.}
+	\end{center}
+
+	$\spc$\\
+	Свойства на определените интеграли:\\
+	1) Линейност\\
+	2) Адитивност\\
+	3) Позитивност\\
+	4) Теорема за средните стойности\\
+	$\spc$\\
+	$f,g: \left[a,\spc b\right] \rightarrow \mathbb{R}$ интегруеми\\
+	$g(x) \geq 0 \forall x \in [a,b]$\\
+	$m \leq f(x) \leq M \forall x \in [a,b]$\\
+	Тогава $\quad m\int_{a}^{b}\leq \int_{a}^{b}f(x)g(x)dx\leq M\int_{a}^{b}g(x)dx$\\
+	
+	%LEMMA1
+	\begin{lemma}
+		Нека $f,g: \left[a,\spc b\right] \mapsto \mathbb{R}$ са интегруеми. Тогава $f\circ g$ е интегруема в интервала $\left[a,\spc b\right]$.
+	\end{lemma}
+	% BEGIN PROOF
+	\textbf{Доказателство:} Нека $\tau : a=x_{0}<x_{1}<x_{2}<...<x_{n}=b$ и $\epsilon>0$. Също така $x,\spc y\in\left[x_{i-1},\spc x_{i}\right]$. Разглеждаме разликата между сумите на Дарбу на композицията на $f$ и $g$:
+	\[S_{fg}(\tau)-s_{fg}(\tau)=\sum_{i=1}^{n}\omega (fg;\left[x_{i-1},\spc x_{i}\right])(x_{i} - x_{i-1})\].
+	........
+	$\blacksquare$
+	% END PROOF
+	
+	\begin{corollary}
+		\textbf{от Теоремата за средните стойности}: Нека $f: \left[a,\spc b\right] \mapsto \mathbb{R}$ е непрекъсната и $g: \left[a,\spc b\right] \mapsto \mathbb{R}$ е интегруема, като $g$ е неотрицателна в интервала $\left[a,\spc b\right]$. Тогава съществува $\xi\in\left[a,\spc b\right]$, за което $\int_{a}^{b} f(x)\,\mathrm{d}x = f(\xi)\int_{a}^{b} g(x)\,\mathrm{d}x$.
+	\end{corollary}
+	% BEGIN PROOF
+	\textbf{Доказателство:} \textbf{(Iсл.)} Нека ...\\
+	\textbf{(Iсл.)}........
+	$\blacksquare$
+	% END PROOF
+	
+	............
+	............
+	
+	\section*{Фундаментална теорема на анализа}
+	\begin{proposition}
+		$F: \Delta\rightarrow\mathbb{R} \text{ е непрекъсната,}\quad x\in\Delta,\quad$\\
+		\begin{math}
+		[x-\varepsilon,x+\varepsilon]\subset\Delta \Rightarrow f \text{ - интегруема в }
+		[x-\varepsilon,x+\varepsilon]
+		\Rightarrow f \text{ - ограничена в }[x-\varepsilon,x+\varepsilon]
+		\end{math}
+		\begin{align*}
+		&F(y)-F(x) = \int_{a}^{y}f(t)dt-\int_{a}^{x}f(t)dt = \int_{a}^{y}f(t)dt,
+		\quad y \in [x-\varepsilon,x+\varepsilon]\\
+		&|F(y)-F(x)| =
+		\left| \int_{x}^{y}f(t)dt \right| \leq \int_{\min\{x,y\}}^{\max\{x,y\}}|f(t)|dt \leq M |x-y|\\
+		&\Rightarrow \lim\limits_{y\to x} F(y)=F(x)
+		\end{align*}
+	Ако $x$ е десен кран на $\Delta$, то разглеждаме $[x-\varepsilon,x]\subset\Delta$ ...\\
+	Ако $x$ е десен кран на $\Delta$, то разглеждаме $[x,x+\varepsilon]\subset\Delta$ ...\\
+	\halfbox{Забележка} $\int_{a}^{b}1.dt = b-a,\quad a\leq b$
+	\end{proposition}
+
+	% THEOREM
+	\begin{theorem}\textbf{\underline{Нютон-Лайбниц}}
+		$\spc$\\
+		\begin{math}
+			Нека f:\Delta\rightarrow\mathbb{R},\spc \Delta\text{ - интервал, } a\in\Delta, f \text{ е интегруема в } [a,x] \text{ за всяко } x\in\Delta; F(x) \text{ ще } \\
+			\text{нарираме примитивна на } f(x), \text{ където }
+			F(x) := \int_{a}^{x}f(t)dt;
+			\text{ Нека допълнително } f \\
+			\text{е непрекъсната в } x\in\Delta.
+			\text{ Тогава } F \text{ е диференцируема в } x \text{ и } F'(x) = f(x). 
+		\end{math}
+	\end{theorem}
+	% BEGIN PROOF
+	\underline{Доказателство:}\\
+	\begin{align*}
+		&\left|\frac{F(x+h)-F(x)}{h}-f(x)\right| = \left|\frac{\int_{a}^{x+h}f(t)dt-\int_{a}^{x}f(t)dt}{h}-f(x)\right| = \\
+		&=\left|\frac{1}{h}\int_{x}^{x+h}f(t)dt-\frac{1}{h}\int_{x}^{x+h}f(x)dt\right| =
+		\left|\frac{1}{h}\int_{x}^{x+h}(f(t)-f(x))dt\right| \\
+	\end{align*}
+	\begin{math}
+		h>0 \rightarrow \left|\frac{1}{h}\int_{x}^{h+x}(f(t)-f(x))dt\right| \leq \frac{1}{|h|}\int_{x}^{x+h}|f(t)-f(x)|dt \leq \frac{1}{|h|}\int_{x}^{x+h}\varepsilon\spc dt = \varepsilon \\
+		h<0 \rightarrow
+		\left|\frac{1}{h}\int_{x}^{x+h}(f(t)-f(x))dt\right|
+		\leq \frac{1}{|h|}\int_{x+h}^{x}|f(t)-f(x)|dt \leq
+		\frac{1}{|h|}\int_{x+h}^{x}\varepsilon\spc dt =
+		\varepsilon \frac{|h|}{|h|}=\varepsilon
+	\end{math}
+	\begin{center}
+		\begin{align*}
+			&\underset{f\text{ - непр. в }x}{\varepsilon > 0}\quad \rightarrow \quad \exists \delta > 0 \forall t\in\Delta, |t-x|<\delta : |f(t)-f(x)| < \varepsilon\\
+			&|h|<\delta,\quad x+h\in\Delta\\
+			\spc
+			&\left|\frac{F(x+h)-F(x)}{h}-f(x)\right| \leq \varepsilon \Rightarrow \exists \lim\limits_{h\to 0}\frac{F(x+h)-F(x)}{h} = f(x)
+		\end{align*}
+	\end{center}
+	\begin{flushright}
+		$\blacksquare$
+	\end{flushright}
+	% END PROOF
+	\begin{corollary} (Непрекъснатите функции имат примитивна)\\
+		Нека $f:\Delta\to\mathbb{R}$, $\Delta$ - интервал, $f$ - непрекъсната, $a\in\Delta$. Тогава $F(x) = \int_{a}^{x}f(t)dt$ е диференцируема в $\Delta$ и $F'(x)=f(x)$ за всяко $x\in\Delta$.
+	\end{corollary}
+	\begin{corollary} (Формула на Лайбниц-Нютон)\\
+		Нека $f:[a,b]\to\mathbb{R}$ е непрекъсната. Нека $G$ е произволна примитивна за $f$ в $[a,b]$. Тогава $\int_{a}^{b}f(x)dx=G(b) - G(a) =: G(x)\biggr\rvert_{a}^{b}$
+	\end{corollary}
+	%BEGIN PROOF
+	\underline{Доказателство}:\\
+	$F(x) = \int_{a}^{x}f(t)dt$ примитивна за $f$ в $[a,b]$\\
+	$\Rightarrow F = G + C$, $C$ - константа.\\
+	$0=F(a)=G(a)+C\Rightarrow C=-G(a)\Rightarrow\int_{a}^{b}f(t)dt=F(b)=G(b)+C=G(b)-G(a).$\\
+	\begin{flushright}
+		$\square$
+	\end{flushright}
+	%END PROOF
+	
+	\begin{theorem} \textbf{Смяна на променливите в определените интеграли}\\
+		...
+		
+	\end{theorem}
+\end{document}
