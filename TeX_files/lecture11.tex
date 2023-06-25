@@ -58,65 +58,23 @@
 	\selectlanguage{russian}
 	\color{white}
 	\pagecolor{darkgray}
-	\title{Записки по ДИС2 - Лекция 11}
-	\date{27.04.2023}
+	\title{Записки по ДИС2 - Лекция 11 Онлайн}
+	\date{04.05.2023}
 	\maketitle
 	\begin{center}
 		\Large
-		\textbf{Функции (и изображения) на повече от една променливи.}
+		\textbf{Топология на $\mathbb{R}$.}
 	\end{center}
 	
 	%###########################################################
 	\begin{math}
-	\text{Функция на }n\text{ променливи: }\quad f:D\rightarrow \mathbb{R}, \quad D\subset\mathbb{R} \quad
-	f(x)\equiv f(x_1,x_2,...,x_n)\\
-	\\
-	f:D\rightarrow \mathbb{R}^k, \quad D\subset\mathbb{R}^n \spc(n,k \in \mathbb{R})\quad
-	f(x)=f(x_1,...,x_n)=\begin{pmatrix}
-		f_1(x_1,...,x_n)\\
-		f_2(x_1,...,x_n)\\
-		... \spc... \spc... \spc...\\
-		f_k(x_1,...,x_k)
-	\end{pmatrix}\quad x\in D\\
-	\\
-	f_1,f_2,...,f_k \text{ - координатни функции на изображението }f
+		\mathbb{R}^n = \{x=(x_1, ..., x_n)\spc:\spc x_i\in\mathbb{R},\spc i\in\{1,...,n\}\}\quad\quad
+		x = (x_1, ..., x_n)\quad\quad
+		\mathcal{O} = (0, ..., 0)\\
+		\text{\underline{Евклидова норма}: }\|x\| := \sqrt{\sum_{i=1}^{n}x_i^2}\quad\rightarrow\quad \|x\|=\sqrt{\langle x, x \rangle}\\
+		B_r(x) = \{y\in\mathbb{R}^n : \|x-y\| < r\}\quad\quad
+		\overline{B_r}(x) = \{y\in\mathbb{R}^n : \|x-y\| \leq r\}\\
+		\|x\|_p = \left(\sum_{i=1}^{n}|x_i|^p \right) ^{\frac{1}{p}},\quad p\geq 1\quad\quad\quad
+		\|x\|_{\infty} = \max\{|x_1|,...,|x_n|\}
 	\end{math}
-	Toчка на сгъстяване на f:
-	\[\forall \spc U\text{ - околност на }x_0 : (U\cap D)\{x_0\}\neq\emptyset \text{ или } \{x_m\}_{m=1} ^\infty\subset D\ \{x_0\}, x_m\underset{m\to\infty}{\longrightarrow}x_0\]
-	\[\lim\limits_{x\to x_0}f(x)=l,\quad l\in\mathbb{R}^k\]
-	\begin{flalign*}
-		\text{Коши }&\spc\forall\epsilon>0 \spc\exists\delta>0 \spc\forall x \in D,\spc x\neq x_0, \|x-x_0\|<\delta:\|f(x)-l\|<\epsilon\\
-		\text{Хайне }&\spc\forall\{x_m\}_{m=1}^{\infty}\subset D \textbackslash \{x_0\},\spc x_m\underset{m\to\infty}{\longrightarrow}x_0 : f(x_m)\underset{m\to\infty}{\longrightarrow}l
-	\end{flalign*}
-	\\
-	\\
-	$f:D\rightarrow \mathbb{R}^k, \quad D\subset\mathbb{R}^n\quad$
-	$f \text{ е непрекъсната в } x_0, \text{ ако: }\\$
-	\begin{flalign*}&\forall\epsilon>0 \spc\exists\delta>0 \spc\forall x\in D, \spc\|x-x_0\|<\delta:\|f(x)-f(x_0)\|<\epsilon \Leftrightarrow\\
-	&\forall\{x_m\}_{m=1}^\infty \subset D,\spc x_m\underset{m\to\infty}{\rightarrow}x_0 : f(x_m)\underset{m\to\infty}{\rightarrow}f(x_0)
-	\end{flalign*}
-	\halfbox{Пример} $f(x)= \begin{cases}
-		\quad\frac{x_1x_2}{x_1^2+x_2^2},\quad &x=(x_1,x_2)\neq\overset{\rightarrow}{\mathcal{O}}=(0,0)\\
-		\quad0,&\text{ако }x=(0,0)
-	\end{cases}$\\
-	$f:\mathbb{R}^2\rightarrow\mathbb{R}$\\
-	$x_2 = kx_1,\spc k\in\mathbb{R}$\\
-	$f(t,kt)=\frac{t.kt}{t^2+(kt)^2}=\frac{k}{1+k_2}\quad t\neq0$\\
-	\newpage
-	\begin{center}
-		\textbf{Основни теореми за непрекъснати функции (и изображения)}
-	\end{center}
-	\begin{theorem}
-		\underline{Вайерщрас}: Непрекъснат образ на компакт е компакт.\\
-		$\begin{cases}
-			f: K\rightarrow\mathbb{R}^k,\spc K\subset\mathbb{R}^n, K-\text{компакт}\\
-			f \text{ е непрекъснато }\Rightarrow f(K) = \{f(x):x\in K\} \text{ е компактно подмножество на }\mathbb{R}^k
-		\end{cases}$\\
-		\\
-		\underline{Коментар}: $f:[a,b]\rightarrow \mathbb{R}$ - непрекъсната $\Rightarrow f([a,b])$ - компакт в $\mathbb{R}^1\rightarrow f([a,b])$ - ограничено в $\mathbb{R}$, т.е. $f$ е ограничена\\
-		$f([a,b])$ - затворено в $\mathbb{R}^1$(значи $\sup f([a,b])$ и $\inf f([a,b])$ са от $f([a,b])$)	
-	\end{theorem}
-	%BEGIN PROOF
-	\underline{Доказателство:}
-	%END PROOF
 \end{document}
