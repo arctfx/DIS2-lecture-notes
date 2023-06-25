@@ -74,7 +74,7 @@
 		\textbf{Поточкова граница на $\{f_n\}_{n=1}^{\infty}$} \\
 		$f, f_n: D \rightarrow \mathbb{R}$, $D\subset \mathbb{R}$, $n\in\mathbb{N}$ \\
 		Казваме, че $\{f_n\}_{n=1}^{\infty}$ \textit{равномерно клони} към $f$ в $D$ (и пишем $f_n\underset{n\to\infty}{\rightrightarrows}$), ако \\
-		\[\exists\varepsilon >0 \spc\exists n_0 \in \mathbb{N} \spc\forall n \geq n_0 \spc\forall x \in D : |f_n(x) - f(x)|<\varepsilon\]		
+		\[\forall\varepsilon >0 \spc\exists n_0 \in \mathbb{N} \spc\forall n \geq n_0 \spc\forall x \in D : |f_n(x) - f(x)|<\varepsilon\]		
 		\[
 		\tikzmarkin{z}(0.15,-0.2)(-0.15,0.4)
 		n_0(\varepsilon)
@@ -178,10 +178,10 @@
 	
 	%BEGIN PROOF
 	\textbf{\underline{Доказателство:}}
-	$|f(x) - f(x_0)| \leq |f(x)-f_n(x)| + |f_n(x)-f_n(x_0)| + |f_n(x_0) - f_n(x_0)|$\\
+	$|f(x) - f(x_0)| \leq |f(x)-f_n(x)| + |f_n(x)-f_n(x_0)| + |f_n(x_0) - f(x_0)|$\\
 	Нека $\varepsilon$ - произволно. $f_n \rightrightarrows f$ в $D \Rightarrow \boxed{\exists n_0 \in \mathbb{N}}\spc \forall n \geq n_0 \forall x \in D : |f_n(x) - f(x)| < \frac{\varepsilon}{3}$\\
 	$f_{n_0}\text{ e непрекъсната в }x_0 \Rightarrow \boxed{\exists\delta>0}\spc\forall x\in D, |x - x_0| < \delta : |f_{n_0}(x) - f_{n_0}(x_0)| < \frac{\varepsilon}{3}$ \\
-	Значи за всяко $x\in D, \spc|x - x_0|<\delta$ е в сила $|f(x) - f(x_0)| \leq |f(x) - f_{n_0}(x)| + |f_{n_0}(x) - f_{n_{0}}(x_0)| + |f_{n_0}(x_0) - f(x_0)| < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.\spc \square$\\
+	Значи за всяко $x\in D, \spc|x - x_0|<\delta$ е в сила $|f(x) - f(x_0)| \leq |f(x) - f_{n_0}(x)| + |f_{n_0}(x) - f_{n_{0}}(x_0)| + |f_{n_0}(x_0) - f(x_0)| < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.$ \hfill$\blacksquare$\\
 	%END PROOF
 	
 	\begin{theorem}
@@ -203,7 +203,8 @@
 	$|f_n(x)-f_{n+p}(x)|\leq |f_n(x)-f(x)|+|f(x)-f_{n+p}(x)|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$\\
 	\textbf{($\Leftarrow$)} \boxed{x\in D} - фиксираме, $\quad \{f_n(x)\}_{n=1}^{\infty}\subset\mathbb{R}$ е фундаментална $\rightarrow \{f_n(x)\}_{n=1}^{\infty}$ - сходяща за всяко $x\in D,\quad f(x) := \lim\limits_{n\to\infty}f_n(x),\quad f:D\rightarrow \mathbb{R}$\\
 	Да проверим, че $f_n\underset{n\to\infty}{\rightrightarrows}f$ в $D$\\
-	\boxed{\varepsilon>0} $\Rightarrow \exists n_0\in \mathbb{N} \spc\forall n \geq n_0 \spc\forall p \in \mathbb{N} \spc\forall x \in D : |f_n(x) - f_{n+p}(x)|<\frac{\varepsilon}{2}$ (След граничен преход $p \rightarrow +\infty$) $\underline{\forall n \geq n_0 \spc\forall x \in D}: |f_n(x)-f(x)|\leq \frac{\varepsilon}{2}<\varepsilon.$ $\square$\\
+	\boxed{\varepsilon>0} $\Rightarrow \exists n_0\in \mathbb{N} \spc\forall n \geq n_0 \spc\forall p \in \mathbb{N} \spc\forall x \in D : |f_n(x) - f_{n+p}(x)|<\frac{\varepsilon}{2}$ (След граничен преход $p \rightarrow +\infty$) $\underline{\forall n \geq n_0 \spc\forall x \in D}: |f_n(x)-f(x)|\leq \frac{\varepsilon}{2}<\varepsilon.$
+	\hfill$\blacksquare$\\
 	%END PROOF
 	$\spc$\\
 	$\spc$\\
@@ -219,9 +220,10 @@
 	%BEGIN PROOF
 	\textbf{\underline{Доказателство:}}
 	\boxed{\varepsilon>0}\\
-	$\sum{n=1}{\infty}a_n$ е сходящ $\Rightarrow \exists n_0 \in \mathbb{N} \spc\forall n \geq n_0 \spc\forall p \in \mathbb{N} : \big|\textstyle{\sum_{i=n+1}^{n+p}a_i}\big|<\varepsilon$\\
+	$\sum_{n=1}^{\infty}a_n$ е сходящ $\Rightarrow \exists n_0 \in \mathbb{N} \spc\forall n \geq n_0 \spc\forall p \in \mathbb{N} : \big|\textstyle{\sum_{i=n+1}^{n+p}a_i}\big|<\varepsilon$\\
 	Тогава за $n\geq n_0$ - произволно, $p \in \mathbb{N}$, $x\in D$ - произволно, имаме:\\
-	$\big|\textstyle{\sum_{i=n+1}^{n+p}f_i(x)}\big|\leq \sum_{i=n+1}^{n+p}\big|f_i(x)\big|\leq \sum_{i=n+1}^{n+p}a_i < \varepsilon.\spc\square$\\
+	$\big|\textstyle{\sum_{i=n+1}^{n+p}f_i(x)}\big|\leq \sum_{i=n+1}^{n+p}\big|f_i(x)\big|\leq \sum_{i=n+1}^{n+p}a_i < \varepsilon.$
+	\hfill$\blacksquare$\\
 	%END PROOF
 	\halfbox{Пример} $\sum_{n=1}^{\infty}\frac{x^n}{n^2}$
 	$\quad x\in [-1,1]\longrightarrow \big|\frac{x^n}{n^2}\big|\leq \frac{1}{n^2},\spc \sum_{n=1}^{\infty}\frac{1}{n^2}$ - сходящ.
