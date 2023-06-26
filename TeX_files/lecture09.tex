@@ -151,7 +151,7 @@
 		&\sum_{n=0}^{\infty}|a_n(x-a)^n|=\sum_{n=0}^{\infty}\underbrace{\left|a_n(\xi-a)^n\right|}_{\leq M}\left|\frac{x-a}{\xi-a}\right|^n&&
 	\end{flalign}
 	$\sum_{n=0}^{\infty}a_n(\xi - a)^n$ - сходящ $\Rightarrow a_n(\xi-a)^n\underset{n\to\infty}{\longrightarrow}0\Rightarrow\exists M\in\mathbb{R} \spc\forall n\in\mathbb{N}\cup\{0\}:|a_n(\xi -a)^n|\leq M$\\
-	$(1)\spc\leq\sum_{n=0}^{\infty}M.q^n,\quad q=\left|\frac{x-a}{\xi-a}\right|\in[0,1)\Rightarrow$ редът е сходящ от пр. за сравнение. $\square$
+	$(1)\spc\leq\sum_{n=0}^{\infty}M.q^n,\quad q=\left|\frac{x-a}{\xi-a}\right|\in[0,1)\Rightarrow$ редът е сходящ от пр. за сравнение. \hfill$\blacksquare$\\
 	%END PROOF
 	
 	\begin{theorem}
@@ -161,7 +161,7 @@
 	$R := sup\Biggl\{\underbrace{|x-a|:\sum_{n=0}^{\infty}a_n(x-a)^n\text{е сходящ}}_{\neq \emptyset}\Biggr\}\quad R\in[0,+\infty]$\\
 	$x\in\mathbb{R}, |x-a|>R \Rightarrow \sum_{n=0}^{\infty}a_n(x-a)^n$ - разходящ.\\
 	$x\in\mathbb{R}, |x-a|<R \Rightarrow \exists\xi\in\mathbb{R}: |x-a|<|\xi-a|\text{ и }\sum_{n=0}^{\infty}a_n(x-a)^n$ - е сходящ.\\
-	Като приложим лемата, получаваме, че: $\sum_{n=0}^{\infty}a_n(x-a)^n$ е абсолютно сходящ. $\square$
+	Като приложим лемата, получаваме, че: $\sum_{n=0}^{\infty}a_n(x-a)^n$ е абсолютно сходящ. \hfill$\blacksquare$\\
 	%END PROOF
 	
 	\begin{theorem}
@@ -173,6 +173,15 @@
 	
 	%BEGIN PROOF
 	\textbf{\underline{Доказателство:}} $l = \limsup\sqrt[n]{|a_n|}$, $R = \frac{1}{l}$\\
-	(a) $|x-a|<\frac{1}{l}$ $\quad l|x-a|<1\rightarrow \exists q : l|x-a|<q<1$
+	(a) $|x-a|<\frac{1}{l}$ $\quad l|x-a|<1\rightarrow \exists q : l|x-a|<q<1$\\
+	$\sum_{n=0}^{\infty}|a_n(x-a)^n| - $ Прилагаме Критерия на Коши: $\sqrt[n]{\mathbf{|}a_n(x-a)^n\mathbf{|}}=\sqrt[n]{\mathbf{|}a_n\mathbf{|}}.|x-a|$\\Дава сходимост за $q<1$. 
+	\begin{math}
+		\limsup\sqrt[n]{\mathbf{|}a_n\mathbf{|}}=l<\frac{q}{|x-a|}\Rightarrow \exists n_0\in\mathbb{N}\spc\forall n \geq n_0 : \sqrt[n]{\mathbf{|}a_n\mathbf{|}} < \frac{q}{|x-a|}\Rightarrow \sqrt[n]{\mathbf{|}a_n(x-a)^n\mathbf{|}}<q\spc\forall n\geq n_0
+		\Rightarrow \sum_{n=0}^{\infty}|a_n(x-a)^n|
+	\end{math} е сходящ по крит. на Коши.\\
+	(б) $|x-a|>\frac{1}{l} \rightarrow l > \frac{1}{|x-a|}$. 
+	$\sqrt[n]{\mathbf{|}a_n\mathbf{|}} > \frac{1}{x-a}$ за безброй много $n\in\mathbb{N}$. $\sqrt[n_k]{\mathbf{|}a_{n_k}(x-a)^{n_k}\mathbf{|}} > 1 \spc\forall k \in \mathbb{N} \Rightarrow \lim\limits_{k\to\infty}a_{n_k}(x-a)^{n_k} \neq 0, \lim\limits_{n\to\infty}a_{n}(x-a)^{n} \neq 0 $
+	$\Rightarrow \sum_{n=0}^{\infty}a_n(x-a)^n$ е разходящ.
+	\hfill$\blacksquare$\\
 	%END PROOF
 \end{document}
