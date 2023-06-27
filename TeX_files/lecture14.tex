@@ -82,7 +82,7 @@
 	\section*{Теорема за неявната функция}
 	$F(x,y) = 0$
 	\begin{definition}
-		Ако $f : D \rightarrow \mathbb{R}, \spc D \subset \mathbb{R}$ такава, че $f(x, f(x)) = 0 \spc \forall x \in D$, казваме, че $f$ е \textbf{неявна функция}, определена от $F(x,y) = 0$.
+		Ако $f : D \rightarrow \mathbb{R}, \spc D \subset \mathbb{R}$ такава, че $F(x, f(x)) = 0 \spc \forall x \in D$, казваме, че $f$ е \textbf{неявна функция}, определена от $F(x,y) = 0$.
 	\end{definition}
 	
 	\begin{math}
@@ -94,6 +94,7 @@
 		\end{aligned}
 	\end{math}
 
+	$\spc$\\
 	Нека $F$ е гладка функция, $F(x_0, y_0) = 0$.\\
 	$F(x, y) = F(x_0, y_0) + dF(x_0, y_0)(x-x_0, y-y_0) + o(\|(x-x_0, y-y_0)\|)$\\
 	$F(x, y) = F_x'(x_0, y_0)(x-x_0)+F_y'(x_0,y_0)(y-y_0) + o(\|x-x_0, y-y_0\|)$\\
@@ -177,7 +178,7 @@
 	%Пример
 	
 	\begin{theorem}\textbf{Множители на Лагранж}
-		Нека $U\subset{R}^n,\spc U $ - отворено, $k\leq n, \spc g,F_1,F_2,...,F_f : U \rightarrow \mathbb{R}$ са гладки.
+		Нека $U\subset{R}^n,\spc U $ - отворено, $k\leq n, \spc g,F_1,F_2,...,F_к : U \rightarrow \mathbb{R}$ са гладки.
 		Нека $x_0\in U, \spc F_1(x_0)=...=F_k(x_0)=0$ и $F_1,...,F_k$ са независими в $x_0$.
 		Нека $g$ има \textbf{локален условен екстремум} върху $M=\{x\in\mathbb{R}^n:F_1(x)=...=F_k(x)=0\}$ в т. $x_0$. Тогава съществуват $\lambda_1, ..., \lambda_n \in \mathbb{R}$ такива, че $\nabla g(x_0) = \sum_{i=1}^{k}\lambda_i \nabla f_i(x_0)$.
 	\end{theorem}
